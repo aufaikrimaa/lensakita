@@ -1,11 +1,11 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/hero/Hero";
 
-function Home() {
+function Home({ isID, toggleLanguage }) {
   return (
     <>
-      <Navbar />
-      <Hero />
+      <Navbar isID={isID} toggleLanguage={toggleLanguage} />
+      <Hero isID={isID} />
     </>
   );
 }
