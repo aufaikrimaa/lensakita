@@ -28,39 +28,35 @@ function Hero({ isID }) {
 
   const data = [
     {
-      class: "rowDiv1 flex flex-col  gap-[6vw] md:gap-[2vw]",
+      class: "rowDiv1",
       img1: "https://lensakita-images.vercel.app/images/photo1.jpg",
       img2: "https://lensakita-images.vercel.app/images/photo2.jpg",
       img3: "https://lensakita-images.vercel.app/images/photo3.jpg",
       img4: "https://lensakita-images.vercel.app/images/photo4.jpg",
     },
     {
-      class:
-        "rowDiv2 mt-[-4%] sm:mt-[8%] flex flex-col  gap-[6vw] md:gap-[2vw]",
+      class: "rowDiv2 mt-[-4%] sm:mt-[8%]",
       img1: "https://lensakita-images.vercel.app/images/photo4.jpg",
       img2: "https://lensakita-images.vercel.app/images/photo6.jpg",
       img3: "https://lensakita-images.vercel.app/images/jeep-photo2.jpg",
       img4: "https://lensakita-images.vercel.app/images/photo8.jpg",
     },
     {
-      class:
-        "rowDiv3 mt-[-8%] sm:mt-[10%] flex flex-col  gap-[6vw] md:gap-[2vw]",
+      class: "rowDiv3 mt-[-8%] sm:mt-[10%]",
       img1: "https://lensakita-images.vercel.app/images/photo9.jpg",
       img2: "https://lensakita-images.vercel.app/images/jeep-photo3.jpg",
       img3: "https://lensakita-images.vercel.app/images/photo11.jpg",
       img4: "https://lensakita-images.vercel.app/images/photo7.jpg",
     },
     {
-      class:
-        "rowDiv4 mt-[-10%] sm:mt-[8%] flex flex-col  gap-[6vw] md:gap-[2vw]",
+      class: "rowDiv4 mt-[-10%] sm:mt-[8%]",
       img1: "https://lensakita-images.vercel.app/images/jeep-photo7.jpg",
       img2: "https://lensakita-images.vercel.app/images/gr-photo1.jpg",
       img3: "https://lensakita-images.vercel.app/images/jeep-photo5.jpg",
       img4: "https://lensakita-images.vercel.app/images/wd-photo3.jpg",
     },
     {
-      class:
-        "rowDiv5 mt-[-14%] sm:mt-[6%] flex flex-col gap-[6vw] md:gap-[2vw]",
+      class: "rowDiv5 mt-[-14%] sm:mt-[6%]",
       img1: "https://lensakita-images.vercel.app/images/photo5.jpg",
       img2: "https://lensakita-images.vercel.app/images/photo6.jpg",
       img3: "https://lensakita-images.vercel.app/images/photo7.jpg",
@@ -87,7 +83,10 @@ function Hero({ isID }) {
           justify-center gap-[6vw] md:gap-[2vw]"
         >
           {data.map((item, i) => (
-            <div key={i} className={`rowDiv ${item.class}`}>
+            <div
+              key={i}
+              className={`rowDiv ${item.class} flex flex-col gap-[6vw] md:gap-[2vw]`}
+            >
               <div className="imgDiv ">
                 <img
                   className="w-[100%] h-[100%] object-cover"
