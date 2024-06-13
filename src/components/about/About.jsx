@@ -64,7 +64,7 @@ function About({ isID }) {
             <div class="w-full h-1/2 bg-secondary"></div>
         </div> */}
 
-      <div className="content2 w-[100%] h-[35vh] sm:h-[100vh] relative flex items-center px-[5vw] sm:px-[2.5vw] overflow-hidden">
+      <div className="content2 w-[100%] h-[20rem] sm:h-[100vh] relative flex items-center px-[5vw] sm:px-[2.5vw] overflow-hidden">
         <div className="textArea absolute left-[5%] sm:left-[2%] opacity-[.2] text-[10vw] leading-[10vw]  sm:text-[6rem] tracking-tighter sm:whitespace-nowrap ">
           <h2>
             {isID
