@@ -3,7 +3,7 @@ import "./navbar.css";
 
 function Navbar({ isID, toggleLanguage }) {
   return (
-    <div className="fixed w-full flex items-center justify-between px-[5vw] py-[4vw] sm:px-[2.5vw] cursor-pointer sm:py-[2vw] z-[2] ">
+    <div className="fixed w-full flex items-center justify-between px-[5vw] py-[4vw] sm:px-[2.5vw] cursor-pointer sm:py-[2vw] z-[2] mix-blend-difference">
       <div className="lftNav h-[4.5vw] sm:h-[2vw]  overflow-hidden text-[4.5vw] leading-[5vw] sm:text-[1.5vw] sm:leading-[1.8vw] tracking-tighter text-[#fff]">
         <Link to="/">
           <img
@@ -37,11 +37,8 @@ function Navbar({ isID, toggleLanguage }) {
             <h3 className="">{isID ? "Galeri" : "Gallery"}</h3>
           </Link>
         </div>
-        <div className="rghtNav h-[4vw] sm:h-[1.5vw] text-[3vw] leading-[4vw] overflow-hidden sm:text-[1vw] sm:leading-[1.4vw]  tracking-tight text-[#fff]">
-          <div
-            onClick={toggleLanguage}
-            className="bg-buttonPrimary px-2 rounded-full"
-          >
+        <div className="rghtNav h-[1.2rem] sm:h-[1.5rem] text-[0.7rem] leading-[4vw] overflow-hidden sm:text-[1vw] sm:leading-[1.4vw]  tracking-tight text-[#fff]">
+          <div onClick={toggleLanguage} className="border px-2 rounded-full">
             {isID ? "ID" : "EN"}
           </div>
         </div>

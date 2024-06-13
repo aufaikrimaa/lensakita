@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import About from "../components/about/About";
 import Hero from "../components/hero/Hero";
 
 function Home({ isID, toggleLanguage }) {
@@ -6,6 +7,7 @@ function Home({ isID, toggleLanguage }) {
     <>
       <Navbar isID={isID} toggleLanguage={toggleLanguage} />
       <Hero isID={isID} />
+      <About isID={isID} />
     </>
   );
 }
