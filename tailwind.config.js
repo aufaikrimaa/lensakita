@@ -8,6 +8,7 @@ export default {
       secondary: "#FFFFFF",
       white: "#FFFFFF",
       black: "#000000",
+      gray: "#6b7280",
       textTitle: "#096A2E",
       buttonPrimary: "#8ABE53",
       buttonSecondary: "#E0E0E0",
