@@ -64,28 +64,38 @@ function About({ isID }) {
             <div class="w-full h-1/2 bg-secondary"></div>
         </div> */}
 
-      <div className="content2 w-[100%] h-[50vh] sm:h-[100vh] relative flex items-center px-[5vw] sm:px-[2.5vw] overflow-hidden">
-        <div className="textArea absolute left-[5%] sm:left-[2%] opacity-[.2] text-[10vw] leading-[10vw]  sm:text-[7vw] tracking-tighter sm:whitespace-nowrap ">
-          <h2>Strategic design solutions</h2>
-        </div>
-        <div className="textAreaHover absolute left-[5%] sm:left-[2%] opacity-100 text-[10vw] leading-[10vw] sm:text-[7vw]  tracking-tighter sm:whitespace-nowrap ">
-          <h2 className=" overflow-hidden w-[100%] sm:w-[0%]">
-            Strategic design solutions
+      <div className="content2 w-[100%] h-[35vh] sm:h-[100vh] relative flex items-center px-[5vw] sm:px-[2.5vw] overflow-hidden">
+        <div className="textArea absolute left-[5%] sm:left-[2%] opacity-[.2] text-[10vw] leading-[10vw]  sm:text-[6rem] tracking-tighter sm:whitespace-nowrap ">
+          <h2>
+            {isID
+              ? "Buat momen anda bersama kami"
+              : "Let's make your moment with us"}
           </h2>
         </div>
-        <div className="textArea absolute sm:left-[10%] left-[5%] mt-[40vw] sm:mt-[18vw]  opacity-[.2] leading-[10vw] text-[10vw]  sm:text-[7vw] tracking-tighter sm:whitespace-nowrap">
-          <h2>that fuel your bottom line.</h2>
+        <div className="textAreaHover absolute left-[5%] sm:left-[2%] opacity-100 text-[10vw] leading-[10vw] sm:text-[6rem]  tracking-tighter sm:whitespace-nowrap ">
+          <h2 className=" overflow-hidden w-[100%] sm:w-[0%]">
+            {isID
+              ? "Buat momen anda bersama kami"
+              : "Let's make your moment with us"}
+          </h2>
         </div>
-        <div className="textAreaHover2  absolute left-[5%] sm:left-[10%] mt-[40vw] sm:mt-[18vw] leading-[10vw]  opacity-100 text-[10vw]  sm:text-[7vw] tracking-tighter sm:whitespace-nowrap">
-          <h2 className="overflow-hidden w-[100%] sm:w-[0%]">
-            that fuel your bottom line.
+        <div className="textArea absolute sm:left-[10%] left-[5%] mt-[12rem] sm:mt-[18vw]  opacity-[.2] leading-[10vw] text-[2rem]  sm:text-[5rem] tracking-tighter sm:whitespace-nowrap">
+          <h2 className="font-bold sm:font-semibold">
+            Cinematic • Dronevideo • Photoshoot
+          </h2>
+        </div>
+        <div className="textAreaHover2  absolute left-[5%] sm:left-[10%] mt-[12rem] sm:mt-[18vw] leading-[10vw]  opacity-100 text-[2rem]  sm:text-[5rem] tracking-tighter sm:whitespace-nowrap">
+          <h2 className="overflow-hidden w-[100%] sm:w-[0%] font-bold sm:font-semibold">
+            Cinematic • Dronevideo • Photoshoot
           </h2>
         </div>
       </div>
 
-      <div className=" px-[5vw] sm:px-[2.5vw] sm:flex items-center justify-between pb-[12vw] sm:pb-[4vw] pt-[14vw] sm:pt-0">
+      <div className="px-[5vw] sm:px-[2.5vw] sm:flex items-center justify-between pb-[12vw] sm:pb-[4vw] pt-[14vw] sm:pt-0">
         <h3 className="text-[4vw] sm:text-[1.2vw] text-textComplimentary tracking-tight mb-[4vw] sm:mb-0">
-          Unlock profit with monthly design sprints.
+          {isID
+            ? "Abadikan momen anda dengan fotografi dan videografi sinematik!"
+            : "Capture your moments with photography and cinematic videography!"}
         </h3>
         <div className="cta flex items-center justify-between sm:gap-[1vw] cursor-pointer">
           <div className="button bg-buttonPrimary p-4 rounded-full">
