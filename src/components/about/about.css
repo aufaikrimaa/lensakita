@@ -6,13 +6,13 @@
   margin-top: -1.4vw;
 }
 
-ion-icon {
+.about-icon ion-icon {
   font-size: 1.2rem;
   vertical-align: top;
 }
 
 @media (min-width: 640px) {
-  ion-icon {
+  .about-icon ion-icon {
     font-size: 1.4rem;
   }
 }

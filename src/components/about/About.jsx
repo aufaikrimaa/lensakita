@@ -72,7 +72,7 @@ function About({ isID }) {
               : "Let's make your moment with us"}
           </h2>
         </div>
-        <div className="textAreaHover absolute left-[5%] sm:left-[2%] opacity-100 text-[10vw] leading-[10vw] sm:text-[6rem]  tracking-tighter sm:whitespace-nowrap ">
+        <div className="textAreaHover absolute left-[5%] sm:left-[2%] opacity-100 text-[10vw] leading-[10vw] sm:text-[6rem] tracking-tighter sm:whitespace-nowrap ">
           <h2 className=" overflow-hidden w-[100%] sm:w-[0%]">
             {isID
               ? "Buat momen anda bersama kami"
@@ -99,7 +99,7 @@ function About({ isID }) {
         </h3>
         <div className="cta flex items-center justify-between sm:gap-[1vw] cursor-pointer">
           <div className="button bg-buttonPrimary p-4 rounded-full">
-            <div className="h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-center">
+            <div className="about-icon h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-center">
               <h2 className="text-white mb-1 sm:mb-0">
                 <ion-icon name="logo-whatsapp"></ion-icon>
                 {isID ? " Pesan Sekarang!" : " Book now!"}

@@ -1,0 +1,10 @@
+.circle ion-icon {
+  font-size: 2rem;
+  vertical-align: top;
+}
+
+@media (min-width: 640px) {
+  .circle ion-icon {
+    font-size: 4rem;
+  }
+}
