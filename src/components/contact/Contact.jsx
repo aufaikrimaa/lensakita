@@ -2,6 +2,7 @@ import whatsapp from "../../assets/whatsapp.svg";
 import tiktok from "../../assets/tiktok.svg";
 import instagram from "../../assets/instagram.svg";
 import gmail from "../../assets/gmail.svg";
+import facebook from "../../assets/facebook.svg";
 
 function Contact({ isID }) {
   return (
@@ -35,12 +36,16 @@ function Contact({ isID }) {
                     className="h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
                   />
                   <img
+                    src={facebook}
+                    className="h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
+                  />
+                  <img
                     src={whatsapp}
                     className="h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
                   />
                   <img
                     src={gmail}
-                    className="h-11 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
+                    className="h-14 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
                   />
                 </div>
                 {/* <button
