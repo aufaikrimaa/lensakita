@@ -26,13 +26,13 @@ function Navbar({ isID, toggleLanguage }) {
           </Link>
         </div>
         <div className="rghtNav h-[3.5vw] sm:h-[1.5vw] text-[3vw] leading-[4vw] overflow-hidden sm:text-[1vw] sm:leading-[1.4vw]  tracking-tight text-[#fff]">
-          <Link to="/">
+          <Link to="/pricelist">
             <h3 className="">Price List</h3>
             <h3 className="">Price List</h3>
           </Link>
         </div>
         <div className="rghtNav h-[3.5vw] sm:h-[1.5vw] text-[3vw] leading-[4vw] overflow-hidden sm:text-[1vw] sm:leading-[1.4vw]  tracking-tight text-[#fff]">
-          <Link to="/">
+          <Link to="/gallery">
             <h3 className="">{isID ? "Galeri" : "Gallery"}</h3>
             <h3 className="">{isID ? "Galeri" : "Gallery"}</h3>
           </Link>
