@@ -1,0 +1,27 @@
+.my-masonry-grid {
+  display: flex;
+  width: auto;
+}
+.my-masonry-grid_column {
+  background-clip: padding-box;
+}
+.my-masonry-grid_column > div {
+  margin-bottom: 8px;
+}
+
+.sidebar ion-icon {
+  font-size: 1rem;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+@media (min-width: 640px) {
+  .sidebar ion-icon {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+
+  .my-masonry-grid_column > div {
+    margin-bottom: 16px;
+  }
+}
