@@ -1,30 +1,10 @@
 import Masonry from "react-masonry-css";
 import "./gallery.css";
-import { useRef, useState } from "react";
-import video1 from "../../assets/video1.mp4";
-import video2 from "../../assets/video2.mp4";
-import cover1 from "../../assets/cover-video1.jpg";
+import { useState } from "react";
 import VideoItem from "./VideoItem";
 
-function ItemGallery({ isID, videoSrc, coverSrc }) {
-  const videoRef = useRef(null);
+function ItemGallery({ isID }) {
   const [menu, setMenu] = useState("photos");
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0; // Reset video to the beginning
-    }
-  };
 
   const dataPhoto = [
     "https://lensakita-images.vercel.app/images/photo1.jpg",
@@ -55,6 +35,45 @@ function ItemGallery({ isID, videoSrc, coverSrc }) {
     "https://lensakita-images.vercel.app/images/wd-photo3.jpg",
   ];
 
+  const dataVideo = [
+    {
+      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
+      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+    },
+    {
+      cover: "https://lensakita-images.vercel.app/images/cover-video2.jpg",
+      video: "https://lensakita-images.vercel.app/videos/video2.mp4",
+    },
+    {
+      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
+      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+    },
+    {
+      cover: "https://lensakita-images.vercel.app/images/cover-video2.jpg",
+      video: "https://lensakita-images.vercel.app/videos/video2.mp4",
+    },
+    {
+      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
+      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+    },
+    {
+      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
+      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+    },
+    {
+      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
+      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+    },
+    {
+      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
+      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+    },
+    {
+      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
+      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+    },
+  ];
+
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
@@ -63,9 +82,9 @@ function ItemGallery({ isID, videoSrc, coverSrc }) {
 
   return (
     <div className="bg-secondary px-[5vw] sm:px-[2.5vw] relative">
-      <div className="h-[6rem] sm:h-[5rem] bg-white fixed w-full"></div>
+      <div className="h-[6rem] sm:h-[5rem] bg-white fixed w-full z-10"></div>
       <div className="sm:flex py-[5vw] sm:py-[6vw]">
-        <div className="sidebar w-[90vw] sm:w-1/6 sm:border-r-2 border-gray fixed h-[80%] mt-4 sm:mt-0 flex flex-col items-center sm:items-start">
+        <div className="sidebar w-[90vw] sm:w-[12rem] sm:border-r-2 border-gray fixed h-[80%] mt-4 sm:mt-0 flex flex-col items-center sm:items-start z-20">
           <div className="w-full flex sm:flex-col gap-x-4 text-sm sm:text-base mt-3 sm:mt-0 justify-center sm:pr-4">
             <div
               className={`sm:w-full my-1 p-2  hover:bg-buttonSecondary cursor-pointer rounded-md transition ease-in-out ${
@@ -87,7 +106,7 @@ function ItemGallery({ isID, videoSrc, coverSrc }) {
             </div>
           </div>
         </div>
-        <div className="content w-full sm:ml-[18%] mt-20 sm:mt-0">
+        <div className="content w-full sm:ml-[14%] mt-20 sm:mt-0">
           <div className={`${menu === "photos" ? "block" : "hidden"}`}>
             <Masonry
               breakpointCols={breakpointColumnsObj}
@@ -107,10 +126,9 @@ function ItemGallery({ isID, videoSrc, coverSrc }) {
               menu === "videos" ? "block" : "hidden"
             } flex flex-wrap`}
           >
-            <VideoItem videoSrc={video1} coverSrc={cover1} />
-            <VideoItem videoSrc={video2} coverSrc={cover1} />
-            <VideoItem videoSrc={video1} coverSrc={cover1} />
-            <VideoItem videoSrc={video2} coverSrc={cover1} />
+            {dataVideo.map((item, i) => (
+              <VideoItem key={i} videoSrc={item.video} coverSrc={item.cover} />
+            ))}
           </div>
         </div>
       </div>

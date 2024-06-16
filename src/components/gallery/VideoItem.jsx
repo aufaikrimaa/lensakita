@@ -1,58 +1,51 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
+import ReactPlayer from "react-player";
 
 function VideoItem({ videoSrc, coverSrc }) {
-  const videoRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
+    setIsPlaying(true);
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0; // Reset video to the beginning
-    }
+    setIsPlaying(false);
   };
   const handleClick = () => {
     if (!isPlaying) {
       setIsPlaying(true);
-      setIsHovered(true);
-      videoRef.current.play();
     } else {
       setIsPlaying(false);
-      setIsHovered(false);
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0; // Reset video to the beginning
     }
   };
 
   return (
-    <div className="w-[45%] sm:w-[23%] rounded-md overflow-hidden m-2">
-      {!isHovered && (
-        <img
-          src={coverSrc}
-          alt="Video Cover"
-          className="w-full h-full object-cover cursor-pointer"
-          onMouseEnter={handleMouseEnter}
+    <div className="w-[47%] sm:w-[24%] m-1 cursor-pointer relative">
+      <div>
+        {!isPlaying && (
+          <div onClick={handleClick} onMouseEnter={handleMouseEnter}>
+            <img
+              src={coverSrc}
+              alt="Video Cover"
+              className="w-full object-cover cursor-pointer rounded-md"
+            />
+          </div>
+        )}
+        <div
           onClick={handleClick}
-        />
-      )}
-      <video
-        ref={videoRef}
-        src={videoSrc}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleClick}
-        className={`w-full h-full object-cover cursor-pointer ${
-          isHovered ? "block" : "hidden"
-        }`}
-      />
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className={`${isPlaying ? "block" : "hidden"}`}
+        >
+          <ReactPlayer
+            playing={isPlaying}
+            url={videoSrc}
+            height={"100%"}
+            width={"100%"}
+            className="react-player"
+          />
+        </div>
+      </div>
     </div>
   );
 }
