@@ -6,7 +6,7 @@ function PriceListComp({ isID }) {
     <div className="bg-secondary px-[5vw] sm:px-[2.5vw]">
       <div className="h-[6rem] sm:h-[5rem] bg-white fixed w-full z-10"></div>
       <div className="sm:flex py-[5vw] sm:py-[6vw]">
-        <div className="sidebar w-[90vw] sm:w-[12rem] sm:border-r-2 border-gray fixed h-[80%] mt-4 sm:mt-0 flex flex-col items-center sm:items-start z-20">
+        <div className="sidebar w-[90vw] sm:w-[12rem] sm:border-r-2 border-gray fixed sm:h-[80%] mt-4 sm:mt-0 flex flex-col items-center sm:items-start z-20">
           <div className="w-full overflow-x-auto sm:flex-col gap-x-1 text-sm sm:text-base mt-8 sm:mt-0 justify-center sm:pr-4">
             <div className="inline-flex sm:flex-col sm:space-x-0 space-x-2">
               <div

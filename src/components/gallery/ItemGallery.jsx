@@ -84,7 +84,7 @@ function ItemGallery({ isID }) {
     <div className="bg-secondary px-[5vw] sm:px-[2.5vw] relative">
       <div className="h-[6rem] sm:h-[5rem] bg-white fixed w-full z-10"></div>
       <div className="sm:flex py-[5vw] sm:py-[6vw]">
-        <div className="sidebar w-[90vw] sm:w-[12rem] sm:border-r-2 border-gray fixed h-[80%] mt-4 sm:mt-0 flex flex-col items-center sm:items-start z-20">
+        <div className="sidebar w-[90vw] sm:w-[12rem] sm:border-r-2 border-gray fixed sm:h-[80%] mt-4 sm:mt-0 flex flex-col items-center sm:items-start z-20">
           <div className="w-full flex sm:flex-col gap-x-4 text-sm sm:text-base mt-3 sm:mt-0 justify-center sm:pr-4">
             <div
               className={`sm:w-full my-1 p-2  hover:bg-buttonSecondary cursor-pointer rounded-md transition ease-in-out ${

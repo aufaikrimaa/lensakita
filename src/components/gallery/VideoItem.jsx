@@ -11,12 +11,9 @@ function VideoItem({ videoSrc, coverSrc }) {
   const handleMouseLeave = () => {
     setIsPlaying(false);
   };
+
   const handleClick = () => {
-    if (!isPlaying) {
-      setIsPlaying(true);
-    } else {
-      setIsPlaying(false);
-    }
+    setIsPlaying(!isPlaying);
   };
 
   return (
