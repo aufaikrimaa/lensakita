@@ -1,6 +1,7 @@
 import whatsapp from "../../assets/whatsapp.svg";
 import tiktok from "../../assets/tiktok.svg";
 import instagram from "../../assets/instagram.svg";
+import youtube from "../../assets/youtube.svg";
 import gmail from "../../assets/gmail.svg";
 import facebook from "../../assets/facebook.svg";
 
@@ -26,26 +27,30 @@ function Contact({ isID }) {
                     <p>Contact & Social Media</p>
                   </div>
                 </div>
-                <div className="flex gap-6">
+                <div className="flex gap-5 sm:gap-6">
                   <img
                     src={instagram}
-                    className="h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
+                    className="h-10 sm:h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
                   />
                   <img
                     src={tiktok}
-                    className="h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
+                    className="h-10 sm:h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
                   />
                   <img
                     src={facebook}
-                    className="h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
+                    className="h-10 sm:h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
+                  />
+                  <img
+                    src={youtube}
+                    className="h-10 sm:h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
                   />
                   <img
                     src={whatsapp}
-                    className="h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
+                    className="h-10 sm:h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
                   />
                   <img
                     src={gmail}
-                    className="h-14 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
+                    className="h-10 sm:h-12 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
                   />
                 </div>
                 {/* <button

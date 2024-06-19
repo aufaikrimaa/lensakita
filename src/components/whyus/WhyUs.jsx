@@ -37,17 +37,17 @@ function WhyUs({ isID }) {
   const dataWhyUs = [
     {
       class: "content1",
-      title: "Lorem ipsum",
+      title: "Kualitas",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       class: "content2",
-      title: "Lorem ipsum",
+      title: "Kinerja",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
       class: "content3",
-      title: "Lorem ipsum",
+      title: "Harga",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
@@ -63,9 +63,7 @@ function WhyUs({ isID }) {
         <div className="flex gap-[2vw] sm:gap-0 sm:flex-col">
           <div className="text-[9vw] sm:text-[5rem] tracking-tighter leading-[3rem] sm:leading-[6rem]">
             <h2 className="text-gray">
-              {isID
-                ? "Kenapa harus pilih LensaKita?"
-                : "Why you should choose LensaKita?"}
+              {isID ? "Kenapa LensaKita?" : "Why LensaKita?"}
             </h2>
           </div>
         </div>
