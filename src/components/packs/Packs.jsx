@@ -23,59 +23,16 @@ function Packs({ isID }) {
       },
     });
     tl.to(".slide", {
-      xPercent: -58,
+      xPercent: -50,
       ease: Power2,
     });
   }, container);
 
   const breakpointColumnsObj = {
-    default: 4,
+    default: 3,
     1100: 3,
     700: 2,
   };
-
-  const packsDataS1 = [
-    {
-      title: "School Events",
-      img: "https://lensakita-images.vercel.app/images/photo7.jpg",
-    },
-    {
-      title: "Yearbook",
-      img: "https://lensakita-images.vercel.app/images/photo5.jpg",
-    },
-    {
-      title: "Graduation",
-      img: "https://lensakita-images.vercel.app/images/gr-photo1.jpg",
-    },
-    {
-      title: "Jeep Tour",
-      img: "https://lensakita-images.vercel.app/images/jeep-photo2.jpg",
-    },
-    {
-      title: "Vacation",
-      img: "https://lensakita-images.vercel.app/images/jeep-photo7.jpg",
-    },
-    {
-      title: "Wedding",
-      img: "https://lensakita-images.vercel.app/images/wd-photo1.jpg",
-    },
-    {
-      title: "Prewedding",
-      img: "https://lensakita-images.vercel.app/images/wd-photo2.jpg",
-    },
-    {
-      title: "Engagement",
-      img: "https://lensakita-images.vercel.app/images/wd-photo3.jpg",
-    },
-    {
-      title: "Cinematic",
-      img: "https://lensakita-images.vercel.app/images/jeep-photo3.jpg",
-    },
-    {
-      title: "Photoshoot",
-      img: "https://lensakita-images.vercel.app/images/photo1.jpg",
-    },
-  ];
 
   const schoolEvent = [
     {
@@ -88,7 +45,7 @@ function Packs({ isID }) {
     },
     {
       img: "",
-      video: "https://lensakita-images.vercel.app/videos/video3.mp4",
+      video: "https://lensakita-images.vercel.app/videos/school-video1.mp4",
     },
     {
       img: "https://lensakita-images.vercel.app/images/photo2.jpg",
@@ -96,7 +53,7 @@ function Packs({ isID }) {
     },
     {
       img: "",
-      video: "https://lensakita-images.vercel.app/videos/video4.mp4",
+      video: "https://lensakita-images.vercel.app/videos/school-video2.mp4",
     },
     {
       img: "https://lensakita-images.vercel.app/images/photo4.jpg",
@@ -106,8 +63,27 @@ function Packs({ isID }) {
       img: "https://lensakita-images.vercel.app/images/photo5.jpg",
       video: "",
     },
+  ];
+
+  const tour = [
     {
-      img: "https://lensakita-images.vercel.app/images/photo6.jpg",
+      img: "https://lensakita-images.vercel.app/images/jeep-photo1.jpg",
+      video: "",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/jeep-photo2.jpg",
+      video: "",
+    },
+    {
+      img: "",
+      video: "https://lensakita-images.vercel.app/videos/tour-video1.mp4",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/jeep-photo3.jpg",
+      video: "",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/jeep-photo4.jpg",
       video: "",
     },
     {
@@ -115,19 +91,68 @@ function Packs({ isID }) {
       video: "",
     },
     {
-      img: "https://lensakita-images.vercel.app/images/photo7.jpg",
+      img: "https://lensakita-images.vercel.app/images/jeep-photo6.jpg",
       video: "",
     },
     {
-      img: "",
-      video: "",
-    },
-    {
-      img: "https://lensakita-images.vercel.app/images/photo1.jpg",
+      img: "https://lensakita-images.vercel.app/images/jeep-photo5.jpg",
       video: "",
     },
   ];
 
+  const graduation = [
+    {
+      img: "https://lensakita-images.vercel.app/images/gr-photo1.jpg",
+      video: "",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/gr-photo2.jpg",
+      video: "",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/gr-photo3.jpg",
+      video: "",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/gr-photo4.jpg",
+      video: "",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/gr-photo5.jpg",
+      video: "",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/gr-photo1.jpg",
+      video: "",
+    },
+  ];
+
+  const wd = [
+    {
+      img: "",
+      video: "https://lensakita-images.vercel.app/videos/wd-video1.mp4",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
+      video: "",
+    },
+    {
+      img: "",
+      video: "https://lensakita-images.vercel.app/videos/wd-video2.mp4",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/wd-photo1.jpg",
+      video: "",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+      video: "",
+    },
+    {
+      img: "https://lensakita-images.vercel.app/images/wd-photo2.jpg",
+      video: "",
+    },
+  ];
   return (
     <div
       ref={container}
@@ -141,7 +166,7 @@ function Packs({ isID }) {
               <h1 className="">{isID ? "Layanan Kami" : "Our Service"}</h1>
             </div>
             <div className="flex sm:flex items-center">
-              <div className="flex flex-wrap gap-x-2  sm:w-[180rem] w-[50rem]">
+              <div className="flex flex-wrap gap-x-2  sm:w-[140rem] w-[50rem]">
                 <div>
                   <Masonry
                     breakpointCols={breakpointColumnsObj}
@@ -176,7 +201,7 @@ function Packs({ isID }) {
                     className="my-masonry-grid flex"
                     columnClassName="my-masonry-grid_column"
                   >
-                    {schoolEvent.map((item, i) => (
+                    {tour.map((item, i) => (
                       <div key={i} className="w-[60%] sm:w-40 m-1 sm:m-2">
                         <img src={item.img} className="rounded-md" />
                         <ReactPlayer
@@ -198,7 +223,7 @@ function Packs({ isID }) {
                     className="my-masonry-grid flex"
                     columnClassName="my-masonry-grid_column"
                   >
-                    {schoolEvent.map((item, i) => (
+                    {graduation.map((item, i) => (
                       <div key={i} className="w-[60%] sm:w-40 m-1 sm:m-2">
                         <img src={item.img} className="rounded-md" />
                         <ReactPlayer
@@ -226,7 +251,7 @@ function Packs({ isID }) {
                     className="my-masonry-grid flex"
                     columnClassName="my-masonry-grid_column"
                   >
-                    {schoolEvent.map((item, i) => (
+                    {wd.map((item, i) => (
                       <div key={i} className="w-[60%] sm:w-40 m-1 sm:m-2">
                         <img src={item.img} className="rounded-md" />
                         <ReactPlayer
@@ -242,19 +267,6 @@ function Packs({ isID }) {
                     ))}
                   </Masonry>
                 </div>
-
-                {/* {packsDataS1.map((item, i) => (
-                  <div
-                    key={i}
-                    className="image  w-[16vh] h-[16vh] sm:w-[32vh] sm:h-[32vh]"
-                  >
-                    <img
-                      src={item.img}
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                    <h1 className="text-center text-xl mt-2">{item.title}</h1>
-                  </div>
-                ))} */}
               </div>
               <div className="text1 w-[45rem] sm:w-[40rem] leading-[8vh] text-gray text-center">
                 <h3 className="text-[1.6rem] leading-[3.4vh] sm:text-[2rem] font-semibold sm:leading-[6vh] w-[22rem] sm:w-full">
