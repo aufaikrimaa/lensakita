@@ -1,74 +1,12 @@
 import Masonry from "react-masonry-css";
 import "./gallery.css";
 import { useState } from "react";
+import dataPhoto from "../../data/photoData";
+import dataVideo from "../../data/videoData";
 import VideoItem from "./VideoItem";
 
 function ItemGallery({ isID }) {
   const [menu, setMenu] = useState("photos");
-
-  const dataPhoto = [
-    "https://lensakita-images.vercel.app/images/photo1.jpg",
-    "https://lensakita-images.vercel.app/images/photo2.jpg",
-    "https://lensakita-images.vercel.app/images/photo3.jpg",
-    "https://lensakita-images.vercel.app/images/gr-photo1.jpg",
-    "https://lensakita-images.vercel.app/images/photo4.jpg",
-    "https://lensakita-images.vercel.app/images/photo5.jpg",
-    "https://lensakita-images.vercel.app/images/photo6.jpg",
-    "https://lensakita-images.vercel.app/images/photo7.jpg",
-    "https://lensakita-images.vercel.app/images/photo8.jpg",
-    "https://lensakita-images.vercel.app/images/photo9.jpg",
-    "https://lensakita-images.vercel.app/images/photo10.jpg",
-    "https://lensakita-images.vercel.app/images/photo12.jpg",
-    "https://lensakita-images.vercel.app/images/gr-photo3.jpg",
-    "https://lensakita-images.vercel.app/images/jeep-photo1.jpg",
-    "https://lensakita-images.vercel.app/images/jeep-photo2.jpg",
-    "https://lensakita-images.vercel.app/images/jeep-photo3.jpg",
-    "https://lensakita-images.vercel.app/images/jeep-photo4.jpg",
-    "https://lensakita-images.vercel.app/images/jeep-photo5.jpg",
-    "https://lensakita-images.vercel.app/images/jeep-photo6.jpg",
-    "https://lensakita-images.vercel.app/images/jeep-photo7.jpg",
-    "https://lensakita-images.vercel.app/images/gr-photo2.jpg",
-    "https://lensakita-images.vercel.app/images/gr-photo4.jpg",
-    "https://lensakita-images.vercel.app/images/gr-photo5.jpg",
-    "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
-    "https://lensakita-images.vercel.app/images/wd-photo3.jpg",
-    "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
-    "https://lensakita-images.vercel.app/images/wd-photo1.jpg",
-    "https://lensakita-images.vercel.app/images/wd-photo2.jpg",
-  ];
-
-  const dataVideo = [
-    {
-      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
-      video:
-        "https://www.instagram.com/reel/C8HdPdthbxz/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    },
-    {
-      cover: "https://lensakita-images.vercel.app/images/cover-video2.jpg",
-      video:
-        "https://www.instagram.com/reel/C7wZOHmBMLE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    },
-    {
-      cover: "https://lensakita-images.vercel.app/images/cover-video3.jpg",
-      video:
-        "https://www.instagram.com/reel/C579Rh0LVmX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    },
-    {
-      cover: "https://lensakita-images.vercel.app/images/cover-video4.jpg",
-      video:
-        "https://www.instagram.com/reel/C7G32zyBO4L/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    },
-    {
-      cover: "https://lensakita-images.vercel.app/images/cover-video5.jpg",
-      video:
-        "https://www.instagram.com/reel/C7jcXkHBswo/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    },
-    {
-      cover: "https://lensakita-images.vercel.app/images/cover-video6.jpg",
-      video:
-        "https://www.instagram.com/reel/C68GtudBBcA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    },
-  ];
 
   const breakpointColumnsObj = {
     default: 4,
