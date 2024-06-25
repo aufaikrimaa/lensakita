@@ -30,47 +30,43 @@ function ItemGallery({ isID }) {
     "https://lensakita-images.vercel.app/images/gr-photo2.jpg",
     "https://lensakita-images.vercel.app/images/gr-photo4.jpg",
     "https://lensakita-images.vercel.app/images/gr-photo5.jpg",
+    "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
+    "https://lensakita-images.vercel.app/images/wd-photo3.jpg",
+    "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
     "https://lensakita-images.vercel.app/images/wd-photo1.jpg",
     "https://lensakita-images.vercel.app/images/wd-photo2.jpg",
-    "https://lensakita-images.vercel.app/images/wd-photo3.jpg",
   ];
 
   const dataVideo = [
     {
       cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
-      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+      video:
+        "https://www.instagram.com/reel/C8HdPdthbxz/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
     {
       cover: "https://lensakita-images.vercel.app/images/cover-video2.jpg",
-      video: "https://lensakita-images.vercel.app/videos/video2.mp4",
+      video:
+        "https://www.instagram.com/reel/C7wZOHmBMLE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
     {
-      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
-      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+      cover: "https://lensakita-images.vercel.app/images/cover-video3.jpg",
+      video:
+        "https://www.instagram.com/reel/C579Rh0LVmX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
     {
-      cover: "https://lensakita-images.vercel.app/images/cover-video2.jpg",
-      video: "https://lensakita-images.vercel.app/videos/video2.mp4",
+      cover: "https://lensakita-images.vercel.app/images/cover-video4.jpg",
+      video:
+        "https://www.instagram.com/reel/C7G32zyBO4L/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
     {
-      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
-      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+      cover: "https://lensakita-images.vercel.app/images/cover-video5.jpg",
+      video:
+        "https://www.instagram.com/reel/C7jcXkHBswo/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
     {
-      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
-      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
-    },
-    {
-      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
-      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
-    },
-    {
-      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
-      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
-    },
-    {
-      cover: "https://lensakita-images.vercel.app/images/cover-video1.jpg",
-      video: "https://lensakita-images.vercel.app/videos/video1.mp4",
+      cover: "https://lensakita-images.vercel.app/images/cover-video6.jpg",
+      video:
+        "https://www.instagram.com/reel/C68GtudBBcA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
   ];
 
@@ -127,7 +123,7 @@ function ItemGallery({ isID }) {
             } flex flex-wrap`}
           >
             {dataVideo.map((item, i) => (
-              <VideoItem key={i} videoSrc={item.video} coverSrc={item.cover} />
+              <VideoItem key={i} link={item.video} cover={item.cover} />
             ))}
           </div>
         </div>
