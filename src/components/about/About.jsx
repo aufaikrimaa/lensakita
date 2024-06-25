@@ -1,8 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./about.css";
 import { Link } from "react-router-dom";
+import { number } from "../../data/phoneNum";
+import "./about.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,7 +100,12 @@ function About({ isID }) {
             : "Capture your moments with photography and cinematic videography!"}
         </h3>
         <div className="cta flex items-center justify-between sm:gap-[1vw] cursor-pointer">
-          <div className="button bg-buttonPrimary p-4 rounded-full">
+          <div
+            onClick={() => {
+              window.open(`whatsapp://send?phone=${number}`, "_blank");
+            }}
+            className="button bg-buttonPrimary p-4 rounded-full"
+          >
             <div className="about-icon h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-center">
               <h2 className="text-white mb-1 sm:mb-0">
                 <ion-icon name="logo-whatsapp"></ion-icon>
@@ -111,16 +117,16 @@ function About({ isID }) {
               </h2>
             </div>
           </div>
-          <div className="button bg-buttonSecondary p-4 rounded-full">
-            <div className="h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-gray text-center">
-              <Link to="/pricelist">
+          <Link to="/pricelist">
+            <div className="button bg-buttonSecondary p-4 rounded-full">
+              <div className="h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-gray text-center">
                 <h2 className="mb-1 sm:mb-0">
                   {isID ? "Lihat" : "View"} Price List
                 </h2>
                 <h2>{isID ? "Lihat" : "View"} Price List</h2>
-              </Link>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
