@@ -37,23 +37,31 @@ function WhyUs({ isID }) {
   const dataWhyUs = [
     {
       class: "content1",
-      title: "Kualitas",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      title: isID ? "Kualitas" : "Quality",
+      desc: isID
+        ? "Menggunakan peralatan fotografi dan videografi terkini, kami memastikan bahwa setiap momen yang kami dokumentasikan memiliki resolusi tinggi, detail tajam, dan pencahayaan optimal."
+        : "Using the latest photography and videography equipment, we ensure that every moment we document has high resolution, sharp details, and optimal lighting.",
     },
     {
       class: "content2",
-      title: "Kinerja",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      title: isID ? "Kinerja" : "Performance",
+      desc: isID
+        ? "Tim kami mampu beradaptasi dengan cepat terhadap perubahan situasi di lapangan, menjaga komunikasi yang baik dengan klien, dan bekerja sama untuk mencapai hasil yang diinginkan tepat waktu. Dedikasi kami untuk memberikan layanan terbaik memastikan bahwa setiap proyek berjalan lancar dari awal hingga akhir."
+        : "Our team is capable of quickly adapting to changing situations in the field, maintaining good communication with clients, and working together to achieve desired results on time. Our dedication to providing the best service ensures that every project runs smoothly from start to finish.",
     },
     {
       class: "content3",
-      title: "Harga",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      title: isID ? "Harga" : "Pricing",
+      desc: isID
+        ? "Lensakita menawarkan harga yang kompetitif tanpa mengorbankan kualitas. Kami menyediakan berbagai paket dokumentasi yang dapat disesuaikan dengan kebutuhan dan anggaran Anda. "
+        : "Lensakita offers competitive pricing without compromising quality. We provide various documentation packages that can be tailored to your needs and budget.",
     },
     {
       class: "content4",
-      title: "Lorem ipsum",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      title: isID ? "Kepercayaan" : "Trust",
+      desc: isID
+        ? "Kepercayaan adalah fondasi dari hubungan kami dengan klien. Kami berkomitmen untuk menjaga kerahasiaan dan privasi setiap momen yang kami dokumentasikan. Dari acara pribadi hingga proyek korporat, Anda dapat mengandalkan profesionalisme dan integritas kami."
+        : "Trust is the foundation of our relationship with clients. We are committed to maintaining the confidentiality and privacy of every moment we document. From private events to corporate projects, you can rely on our professionalism and integrity.",
     },
   ];
 
