@@ -118,4 +118,47 @@ const wd = [
   },
 ];
 
-export { schoolEvent, tour, graduation, wd };
+const serviceData = [
+  {
+    title: "School Events",
+    descID:
+      "Melayani kebutuhan acara sekolah seperti photoshoot, yearbook, perpisahan, cinematic, short movie dan acara lain sesuai request.",
+    descEN:
+      "Providing for school event needs such as photoshoots, yearbooks, farewells, cinematic and short movies, and other events as per request.",
+    img: "https://lensakita-images.vercel.app/images/photo7.jpg",
+  },
+  {
+    title: "Graduation",
+    descID:
+      "Sesi foto kelulusan adalah cara sempurna untuk merayakan pencapaian Anda dan mengabadikan momen spesial ini pada waktunya.",
+    descEN:
+      "A graduation photo session is the perfect way to celebrate your achievements and capture this special moment in time.",
+    img: "https://lensakita-images.vercel.app/images/gr-photo1.jpg",
+  },
+  {
+    title: "Jeep Tour & Vacation",
+    descID:
+      "Abadikan keseruan liburanmu dengan photography dan video drone yang berkualitas.",
+    descEN:
+      "Capture the excitement of your vacation with high-quality photography and drone video.",
+    img: "https://lensakita-images.vercel.app/images/jeep-photo6.jpg",
+  },
+  {
+    title: "Wedding, Pre wedding & Engagement",
+    descID:
+      "Jadikan moment spesialmu tersimpan dengan indah bersama kami melalui photography dan cinematic sesuai keinginan.",
+    descEN:
+      "Make your special moments beautifully preserved with us through photography and cinematic services tailored to your desires.",
+    img: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+  },
+  {
+    title: "Another Events",
+    descID:
+      "Kami memberikan layanan photography, videography, cinematic, dan video drone sesuai dengan kebutuhan acara maupun personal dari anda.",
+    descEN:
+      "We provide photography, videography, cinematic, and drone video services tailored to your event or personal needs.",
+    img: "https://lensakita-images.vercel.app/images/jeep-photo7.jpg",
+  },
+];
+
+export { schoolEvent, tour, graduation, wd, serviceData };
