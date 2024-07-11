@@ -52,7 +52,11 @@ function Contact({ isID }) {
                 </div>
                 <div className="text-[4vw] mb-[4vw] sm:text-[1.5vw] text-center tracking-tighter sm:mb-[1vw]">
                   <div className="footPtag overflow-hidden font-semibold text-gray">
-                    <p>Contact & Social Media</p>
+                    <p>
+                      {isID
+                        ? "Kontak & Media Sosial"
+                        : "Contact & Social Media"}
+                    </p>
                   </div>
                 </div>
                 <div className="flex gap-5 sm:gap-6">

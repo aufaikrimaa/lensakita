@@ -106,7 +106,7 @@ function About({ isID }) {
             }}
             className="button bg-buttonPrimary p-4 rounded-full"
           >
-            <div className="about-icon h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-center">
+            <div className="about-icon h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden sm:text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-center">
               <h2 className="text-white mb-1 sm:mb-0">
                 <ion-icon name="logo-whatsapp"></ion-icon>
                 {isID ? " Pesan Sekarang!" : " Book now!"}
@@ -119,7 +119,7 @@ function About({ isID }) {
           </div>
           <Link to="/pricelist">
             <div className="button bg-buttonSecondary p-4 rounded-full">
-              <div className="h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-gray text-center">
+              <div className="h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden sm:text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-gray text-center">
                 <h2 className="mb-1 sm:mb-0">
                   {isID ? "Lihat" : "View"} Price List
                 </h2>
