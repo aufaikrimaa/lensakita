@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import Masonry from "react-masonry-css";
 import HowToBook from "./HowToBook";
 import qmark from "../../assets/question-mark.svg";
@@ -7,6 +8,36 @@ import "./pricelist.css";
 function PriceListComp({ isID }) {
   const [menu, setMenu] = useState("all");
   const [isOpen, setIsOpen] = useState(false);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      gsap.fromTo(
+        modalRef.current,
+        { y: "100%", opacity: 0 },
+        { y: "0%", opacity: 1, duration: 0.5, ease: "power3.out" }
+      );
+    } else {
+      gsap.to(modalRef.current, {
+        y: "100%",
+        opacity: 0,
+        duration: 0.5,
+        ease: "power3.in",
+      });
+    }
+  }, [isOpen]);
+
+  const handleModalClose = () => {
+    gsap.to(modalRef.current, {
+      y: "100%",
+      opacity: 0,
+      duration: 0.5,
+      ease: "power3.in",
+      onComplete: () => {
+        setIsOpen(false);
+      },
+    });
+  };
 
   const breakpointColumnsObj = {
     default: 4,
@@ -18,7 +49,7 @@ function PriceListComp({ isID }) {
     <div>
       {/* button how to book phone screen */}
       <div className="block sm:hidden">
-        <div className="fixed mt-[92vh] ml-[85vw] z-50">
+        <div className="fixed mt-[92vh] ml-[85vw] z-30">
           <img
             src={qmark}
             className="w-[80%]"
@@ -28,7 +59,7 @@ function PriceListComp({ isID }) {
       </div>
       {/* modal how to book phone screen */}
       <div
-        onClick={() => setIsOpen(false)}
+        onClick={handleModalClose}
         className={`${
           isOpen ? "block z-40" : "hidden"
         } sm:hidden h-screen flex fixed`}
@@ -36,7 +67,10 @@ function PriceListComp({ isID }) {
           backgroundColor: "#001B0Ab4",
         }}
       >
-        <div className="self-center bg-white mx-4 p-6 rounded-lg">
+        <div
+          ref={modalRef}
+          className="self-center bg-white mx-4 p-6 rounded-lg"
+        >
           <HowToBook isID={isID} />
         </div>
       </div>
@@ -203,7 +237,7 @@ function PriceListComp({ isID }) {
             <div
               className="fixed h-[87%] sm:w-[42%] 2xl:w-[40%] rounded-xl p-8"
               style={{
-                backgroundColor: "#F2F2F2",
+                backgroundColor: "#F2F2F2a6",
               }}
             >
               <HowToBook isID={isID} />
