@@ -3,6 +3,7 @@ import service2 from "../../assets/service2.svg";
 import service3 from "../../assets/service3.svg";
 import service4 from "../../assets/service4.svg";
 import service5 from "../../assets/service5.svg";
+import { number } from "../../data/phoneNum";
 
 function HowToBook(isID) {
   return (
