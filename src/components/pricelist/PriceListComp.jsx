@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { wdData } from "../../data/pricelistData";
 import Masonry from "react-masonry-css";
 import HowToBook from "./HowToBook";
 import qmark from "../../assets/question-mark.svg";
 import "./pricelist.css";
+import PriceListCard from "./PricelistCard";
 
 function PriceListComp({ isID }) {
   const [menu, setMenu] = useState("all");
@@ -80,7 +82,7 @@ function PriceListComp({ isID }) {
         <div className="h-[6rem] sm:h-[5rem] bg-white fixed w-full z-10"></div>
         <div className="sm:flex py-[5vw] sm:py-[vw]">
           <div className="pricelist-content bg-white w-[90vw] sm:w-[53vw] 2xl:w-[55vw] fixed mt-4 sm:mt-0 flex flex-col items-center sm:items-start z-20">
-            <div className="w-full overflow-x-auto  gap-x-1 text-xs mt-8 sm:mt-0 justify-center sm:pr-4">
+            <div className="w-full overflow-x-auto  gap-x-1 text-xs xl:text-[0.7rem] 2xl:text-xs mt-8 sm:mt-0 justify-center sm:pr-4">
               <div className="inline-flex space-x-1">
                 <div
                   className={`grid justify-items-center w-[6rem] sm:w-[8rem] 2xl:w-[10rem] my-1 p-1 sm:p-2 hover:bg-buttonSecondary cursor-pointer rounded-md transition ease-in-out text-center ${
@@ -142,72 +144,49 @@ function PriceListComp({ isID }) {
           </div>
 
           <div className="content w-full sm:w-[53vw] 2xl:w-[55vw] mt-[8rem] sm:mt-[5rem]">
-            <Masonry
-              breakpointCols={breakpointColumnsObj}
-              className="w-full my-masonry-grid flex"
-              columnClassName="my-masonry-grid_column"
+            <div
+              className={`${
+                menu === "all" || menu === "wd" ? "block" : "hidden"
+              }`}
             >
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-              <div className=" bg-gray m-2">ss</div>
-            </Masonry>
+              {" "}
+              <Masonry
+                breakpointCols={breakpointColumnsObj}
+                className="w-full my-masonry-grid flex"
+                columnClassName="my-masonry-grid_column"
+              >
+                {wdData.wedding.data.map((item, i) => (
+                  <div className="px-2" key={i}>
+                    <PriceListCard
+                      photo={item.photo}
+                      title={"Paket Wedding"}
+                      pack={item.title}
+                      price={item.price}
+                    />
+                  </div>
+                ))}
+                {wdData.prewedding.data.map((item, i) => (
+                  <div className="px-2" key={i}>
+                    <PriceListCard
+                      photo={item.photo}
+                      title={"Paket Pre Wedding"}
+                      pack={item.title}
+                      price={item.price}
+                    />
+                  </div>
+                ))}
+                {wdData.engagement.data.map((item, i) => (
+                  <div className="px-2" key={i}>
+                    <PriceListCard
+                      photo={item.photo}
+                      title={"Paket Engagement"}
+                      pack={item.title}
+                      price={item.price}
+                    />
+                  </div>
+                ))}
+              </Masonry>
+            </div>
 
             {/* <div className={`${menu === "photos" ? "block" : "hidden"}`}>
             <Masonry
@@ -234,12 +213,7 @@ function PriceListComp({ isID }) {
           </div> */}
           </div>
           <div className="mt-2 hidden sm:block">
-            <div
-              className="fixed h-[87%] sm:w-[42%] 2xl:w-[40%] rounded-xl p-8"
-              style={{
-                backgroundColor: "#F2F2F2a6",
-              }}
-            >
+            <div className="fixed h-[87%] sm:w-[42%] 2xl:w-[40%] rounded-xl p-8 bg-lightGray">
               <HowToBook isID={isID} />
             </div>
           </div>
