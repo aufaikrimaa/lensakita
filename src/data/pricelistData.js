@@ -1,11 +1,15 @@
-const wdData = {
+const pricelistData = {
   wedding: {
     data: [
       {
         id: "W01",
-        title: "Silver",
+        title: {
+          id: "Paket Pernikahan",
+          en: "Wedding Package",
+        },
+        pack: "Silver",
         price: "800k",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
             "1 photografer",
@@ -23,7 +27,11 @@ const wdData = {
       },
       {
         id: "W02",
-        title: "Gold",
+        title: {
+          id: "Paket Pernikahan",
+          en: "Wedding Package",
+        },
+        pack: "Gold",
         price: "1 JT",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
@@ -47,9 +55,13 @@ const wdData = {
       },
       {
         id: "W03",
-        title: "Platinum",
+        title: {
+          id: "Paket Pernikahan",
+          en: "Wedding Package",
+        },
+        pack: "Platinum",
         price: "1.3 JT",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
             "1 Photografer",
@@ -73,7 +85,11 @@ const wdData = {
       },
       {
         id: "W04",
-        title: "Ruby",
+        title: {
+          id: "Paket Pernikahan",
+          en: "Wedding Package",
+        },
+        pack: "Ruby",
         price: "1.8 JT",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
@@ -107,9 +123,13 @@ const wdData = {
       },
       {
         id: "W05",
-        title: "Diamond",
+        title: {
+          id: "Paket Pernikahan",
+          en: "Wedding Package",
+        },
+        pack: "Diamond",
         price: "2.2 JT",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
             "1 Photografer",
@@ -141,7 +161,11 @@ const wdData = {
       },
       {
         id: "W06",
-        title: "Legend",
+        title: {
+          id: "Paket Pernikahan",
+          en: "Wedding Package",
+        },
+        pack: "Legend",
         price: "3.3 JT",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
@@ -173,15 +197,15 @@ const wdData = {
           ],
         },
       },
-    ],
-  },
-  engagement: {
-    data: [
       {
         id: "E01",
-        title: "Classic",
+        title: {
+          id: "Paket Lamaran",
+          en: "Engagement Package",
+        },
+        pack: "Classic",
         price: "400k",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
@@ -197,7 +221,11 @@ const wdData = {
       },
       {
         id: "E02",
-        title: "Bronze",
+        title: {
+          id: "Paket Lamaran",
+          en: "Engagement Package",
+        },
+        pack: "Bronze",
         price: "600k",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
@@ -217,9 +245,13 @@ const wdData = {
       },
       {
         id: "E03",
-        title: "Silver",
+        title: {
+          id: "Paket Lamaran",
+          en: "Engagement Package",
+        },
+        pack: "Silver",
         price: "800k",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
@@ -243,7 +275,11 @@ const wdData = {
       },
       {
         id: "E04",
-        title: "Gold",
+        title: {
+          id: "Paket Lamaran",
+          en: "Engagement Package",
+        },
+        pack: "Gold",
         price: "1 JT",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
@@ -267,9 +303,13 @@ const wdData = {
       },
       {
         id: "E05",
-        title: "Platinum",
+        title: {
+          id: "Paket Lamaran",
+          en: "Engagement Package",
+        },
+        pack: "Platinum",
         price: "2 JT",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
@@ -293,13 +333,13 @@ const wdData = {
           ],
         },
       },
-    ],
-  },
-  prewedding: {
-    data: [
       {
         id: "P01",
-        title: "Classic",
+        title: {
+          id: "Paket Pre Wedding",
+          en: "Pre Wedding Package",
+        },
+        pack: "Classic",
         price: "600K",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
@@ -317,9 +357,13 @@ const wdData = {
       },
       {
         id: "P02",
-        title: "Bronze",
+        title: {
+          id: "Paket Pre Wedding",
+          en: "Pre Wedding Package",
+        },
+        pack: "Bronze",
         price: "800K",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
@@ -339,7 +383,11 @@ const wdData = {
       },
       {
         id: "P03",
-        title: "Silver",
+        title: {
+          id: "Paket Pre Wedding",
+          en: "Pre Wedding Package",
+        },
+        pack: "Silver",
         price: "900K",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
@@ -361,9 +409,13 @@ const wdData = {
       },
       {
         id: "P04",
-        title: "Gold",
+        title: {
+          id: "Paket Pre Wedding",
+          en: "Pre Wedding Package",
+        },
+        pack: "Gold",
         price: "1.5jt",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
@@ -385,6 +437,7 @@ const wdData = {
       },
     ],
   },
+
   additionalServices: [
     {
       id: "AS01",
@@ -416,4 +469,4 @@ const wdData = {
   ],
 };
 
-export { wdData };
+export { pricelistData };

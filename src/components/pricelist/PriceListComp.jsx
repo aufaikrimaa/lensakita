@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { wdData } from "../../data/pricelistData";
+import { pricelistData } from "../../data/pricelistData";
 import Masonry from "react-masonry-css";
 import HowToBook from "./HowToBook";
 import qmark from "../../assets/question-mark.svg";
@@ -144,73 +144,28 @@ function PriceListComp({ isID }) {
           </div>
 
           <div className="content w-full sm:w-[53vw] 2xl:w-[55vw] mt-[8rem] sm:mt-[5rem]">
-            <div
-              className={`${
-                menu === "all" || menu === "wd" ? "block" : "hidden"
-              }`}
-            >
-              {" "}
-              <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className="w-full my-masonry-grid flex"
-                columnClassName="my-masonry-grid_column"
-              >
-                {wdData.wedding.data.map((item, i) => (
-                  <div className="px-2" key={i}>
-                    <PriceListCard
-                      photo={item.photo}
-                      title={"Paket Wedding"}
-                      pack={item.title}
-                      price={item.price}
-                    />
-                  </div>
-                ))}
-                {wdData.prewedding.data.map((item, i) => (
-                  <div className="px-2" key={i}>
-                    <PriceListCard
-                      photo={item.photo}
-                      title={"Paket Pre Wedding"}
-                      pack={item.title}
-                      price={item.price}
-                    />
-                  </div>
-                ))}
-                {wdData.engagement.data.map((item, i) => (
-                  <div className="px-2" key={i}>
-                    <PriceListCard
-                      photo={item.photo}
-                      title={"Paket Engagement"}
-                      pack={item.title}
-                      price={item.price}
-                    />
-                  </div>
-                ))}
-              </Masonry>
-            </div>
-
-            {/* <div className={`${menu === "photos" ? "block" : "hidden"}`}>
             <Masonry
               breakpointCols={breakpointColumnsObj}
-              className="my-masonry-grid flex"
+              className="w-full my-masonry-grid flex"
               columnClassName="my-masonry-grid_column"
             >
-              {dataPhoto.map((img, i) => (
-                <div key={i} className="w-[96%] sm:w-70 m-1 sm:m-2">
-                  <img src={img} className="rounded-md" />
+              {pricelistData.wedding.data.map((item, i) => (
+                <div
+                  className={`px-2 ${
+                    menu === "all" || menu === "wd" ? "block" : "hidden"
+                  }`}
+                  key={i}
+                >
+                  <PriceListCard
+                    id={item.id}
+                    photo={item.photo}
+                    title={isID ? item.title.id : item.title.en}
+                    pack={item.pack}
+                    price={item.price}
+                  />
                 </div>
               ))}
             </Masonry>
-          </div>
-
-          <div
-            className={`${
-              menu === "videos" ? "block" : "hidden"
-            } flex flex-wrap`}
-          >
-            {dataVideo.map((item, i) => (
-              <VideoItem key={i} videoSrc={item.video} coverSrc={item.cover} />
-            ))}
-          </div> */}
           </div>
           <div className="mt-2 hidden sm:block">
             <div className="fixed h-[87%] sm:w-[42%] 2xl:w-[40%] rounded-xl p-8 bg-lightGray">

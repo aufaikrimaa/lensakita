@@ -4,6 +4,7 @@ import { ReactLenis } from "lenis/react";
 import Home from "./pages/Home";
 import PriceList from "./pages/PriceList";
 import Gallery from "./pages/Gallery";
+import DetailPack from "./pages/DetailPack";
 
 function App() {
   const [isID, setIsID] = useState(true);
@@ -27,6 +28,10 @@ function App() {
           <Route
             path="/gallery"
             element={<Gallery isID={isID} toggleLanguage={toggleLanguage} />}
+          />
+          <Route
+            path="/pack/:id"
+            element={<DetailPack isID={isID} toggleLanguage={toggleLanguage} />}
           />
         </Routes>
       </BrowserRouter>
