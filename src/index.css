@@ -1,13 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  color: #ffffff;
-}
-
-.swiper-button-next.swiper-button-disabled::after,
-.swiper-button-prev.swiper-button-disabled::after {
-  opacity: 0.5;
-}
