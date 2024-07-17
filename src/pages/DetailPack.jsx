@@ -100,7 +100,7 @@ function DetailPack({ isID, toggleLanguage }) {
             className="swiper-photos"
           >
             {packages.map((item, i) => (
-              <SwiperSlide key={i} className="">
+              <SwiperSlide key={i} className="relative">
                 <PriceListCard
                   id={item.id}
                   photo={item.photo}
@@ -108,6 +108,11 @@ function DetailPack({ isID, toggleLanguage }) {
                   pack={item.pack}
                   price={item.price}
                 />
+                <div
+                  className={`absolute h-full w-full bg-primary z-20 top-0 rounded-lg opacity-10 ${
+                    item.id === id ? "block" : "hidden"
+                  }`}
+                ></div>
               </SwiperSlide>
             ))}
           </Swiper>
