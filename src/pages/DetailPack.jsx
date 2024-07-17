@@ -7,6 +7,7 @@ import PriceListCard from "../components/pricelist/PricelistCard";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
+import "../components/pricelist/pricelist.css";
 
 function DetailPack({ isID, toggleLanguage }) {
   const { id } = useParams();
