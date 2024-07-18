@@ -43,13 +43,16 @@ function DetailPack({ isID, toggleLanguage }) {
             />
           </div>
           <div className="w-5/12 relative">
-            <div className="text-xl font-semibold">
-              {isID ? selectedPackage.title.id : selectedPackage.title.en} -{" "}
-              {selectedPackage.pack}
+            <div className="flex justify-between mb-4">
+              <div className="text-xl font-semibold">
+                {isID ? selectedPackage.title.id : selectedPackage.title.en} -{" "}
+                {selectedPackage.pack}
+              </div>
+              <div className="text-3xl font-bold text-textTitle">
+                {selectedPackage.price}
+              </div>
             </div>
-            <div className="text-3xl font-bold text-textTitle my-4">
-              {selectedPackage.price}
-            </div>
+
             <div className="font-semibold">Detail :</div>
             <div className="detail">
               {isID
@@ -129,7 +132,7 @@ function DetailPack({ isID, toggleLanguage }) {
           <div className="text-lg font-semibold py-2">
             {isID ? "Paket Lainnya :" : "Another Package :"}
           </div>
-          <div className="flex overflow-x-auto">
+          <div className="text-[">
             <Swiper
               grabCursor={true}
               spaceBetween={10}

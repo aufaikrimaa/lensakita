@@ -8,7 +8,7 @@ const pricelistData = {
           en: "Wedding Package",
         },
         pack: "Silver",
-        price: "800k",
+        price: "Rp. 800.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
@@ -32,7 +32,7 @@ const pricelistData = {
           en: "Wedding Package",
         },
         pack: "Gold",
-        price: "1 JT",
+        price: "Rp. 1.000.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
           id: [
@@ -60,7 +60,7 @@ const pricelistData = {
           en: "Wedding Package",
         },
         pack: "Platinum",
-        price: "1.3 JT",
+        price: "Rp. 1.300.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
@@ -90,7 +90,7 @@ const pricelistData = {
           en: "Wedding Package",
         },
         pack: "Ruby",
-        price: "1.8 JT",
+        price: "Rp. 1.800.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
           id: [
@@ -128,7 +128,7 @@ const pricelistData = {
           en: "Wedding Package",
         },
         pack: "Diamond",
-        price: "2.2 JT",
+        price: "Rp. 2.200.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
@@ -166,7 +166,7 @@ const pricelistData = {
           en: "Wedding Package",
         },
         pack: "Legend",
-        price: "3.3 JT",
+        price: "Rp. 3.300.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
           id: [
@@ -204,7 +204,7 @@ const pricelistData = {
           en: "Engagement Package",
         },
         pack: "Classic",
-        price: "400k",
+        price: "Rp. 400.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
@@ -226,7 +226,7 @@ const pricelistData = {
           en: "Engagement Package",
         },
         pack: "Bronze",
-        price: "600k",
+        price: "Rp. 600.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
           id: [
@@ -250,7 +250,7 @@ const pricelistData = {
           en: "Engagement Package",
         },
         pack: "Silver",
-        price: "800k",
+        price: "Rp. 800.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
@@ -280,13 +280,13 @@ const pricelistData = {
           en: "Engagement Package",
         },
         pack: "Gold",
-        price: "1 JT",
+        price: "Rp. 1.000.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
             "Video cinematic (2-3 menit) Drone",
-            "1 album magnetich 10 sheet isi 80 foto ukuran 4R",
+            "1 album magnetic 10 sheet isi 80 foto ukuran 4R",
             "Dikirim ke Drive",
             "Waktu Kerja 5 jam (Max)",
             "Free BTS",
@@ -308,7 +308,7 @@ const pricelistData = {
           en: "Engagement Package",
         },
         pack: "Platinum",
-        price: "2 JT",
+        price: "Rp. 2.000.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
@@ -340,7 +340,7 @@ const pricelistData = {
           en: "Pre Wedding Package",
         },
         pack: "Classic",
-        price: "600K",
+        price: "Rp. 600.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
           id: [
@@ -362,7 +362,7 @@ const pricelistData = {
           en: "Pre Wedding Package",
         },
         pack: "Bronze",
-        price: "800K",
+        price: "Rp. 800.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
@@ -388,7 +388,7 @@ const pricelistData = {
           en: "Pre Wedding Package",
         },
         pack: "Silver",
-        price: "900K",
+        price: "Rp. 900.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
         details: {
           id: [
@@ -414,7 +414,7 @@ const pricelistData = {
           en: "Pre Wedding Package",
         },
         pack: "Gold",
-        price: "1.5jt",
+        price: "Rp 1.500.000,-",
         photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
         details: {
           id: [
@@ -441,7 +441,7 @@ const pricelistData = {
   additionalServices: [
     {
       title: "Video teaser",
-      price: "600k",
+      price: "Rp. 600.000,-",
       details: {
         id: ["Durasi (1 menit)", "Dikirim ke Drive (maksimal 2 bulan)"],
         en: ["Duration (1 minute)", "Sent to Drive (max 2 months)"],
@@ -449,7 +449,7 @@ const pricelistData = {
     },
     {
       title: "Video cinematic",
-      price: "800k",
+      price: "Rp. 800.000,-",
       details: {
         id: ["Durasi (3-5 menit)", "Dikirim ke Drive (maksimal 2 bulan)"],
         en: ["Duration (3-5 minutes)", "Sent to Drive (max 2 months)"],
@@ -457,7 +457,7 @@ const pricelistData = {
     },
     {
       title: "Foto soft file only + edit",
-      price: "600k",
+      price: "Rp. 600.000,-",
       details: {
         id: ["Waktu kerja 8 jam", "Dikirim ke Drive (maksimal 2 bulan)"],
         en: ["Working time 8 hours", "Sent to Drive (max 2 months)"],
