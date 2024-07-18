@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { pricelistData } from "../data/pricelistData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation } from "swiper/modules";
-import { number } from "../data/phoneNum";
+import { number } from "../data/contactData";
 import Navbar from "../components/navbar/Navbar";
 import PriceListCard from "../components/pricelist/PricelistCard";
 import "swiper/css";

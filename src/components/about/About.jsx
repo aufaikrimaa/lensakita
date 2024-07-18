@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-import { number } from "../../data/phoneNum";
+import { number } from "../../data/contactData";
 import "./about.css";
 
 gsap.registerPlugin(ScrollTrigger);
