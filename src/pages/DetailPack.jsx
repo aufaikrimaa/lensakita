@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "../components/pricelist/pricelist.css";
+import Footer from "../components/footer/Footer";
 
 function DetailPack({ isID, toggleLanguage }) {
   const { id } = useParams();
@@ -34,7 +35,7 @@ function DetailPack({ isID, toggleLanguage }) {
   return (
     <div className="bg-white">
       <Navbar isID={isID} toggleLanguage={toggleLanguage} />
-      <div className="px-[5vw] sm:px-[2.5vw] pt-24">
+      <div className="px-[5vw] sm:px-[2.5vw] pt-24 mb-20">
         <div className="flex justify-between h-[30rem]">
           <div className="h-[30rem] w-1/3">
             <img
@@ -113,7 +114,7 @@ function DetailPack({ isID, toggleLanguage }) {
                     <div className="text-sm">
                       {isID
                         ? item.details.id.map((d, i) => (
-                            <div>
+                            <div key={i}>
                               <ion-icon name="radio-button-on-outline"></ion-icon>
                               {d}
                             </div>
@@ -175,6 +176,7 @@ function DetailPack({ isID, toggleLanguage }) {
           </div>
         </div>
       </div>
+      <Footer isID={isID} />
     </div>
   );
 }

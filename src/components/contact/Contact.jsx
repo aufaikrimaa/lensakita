@@ -1,39 +1,6 @@
-import { number } from "../../data/phoneNum";
-import whatsapp from "../../assets/whatsapp.svg";
-import tiktok from "../../assets/tiktok.svg";
-import instagram from "../../assets/instagram.svg";
-import youtube from "../../assets/youtube.svg";
-import gmail from "../../assets/gmail.svg";
-import facebook from "../../assets/facebook.svg";
+import { ContactAndMedsocData } from "../../data/contactData";
 
 function Contact({ isID }) {
-  const data = [
-    {
-      img: instagram,
-      link: "https://www.instagram.com/lensakita_official?igsh=NmZrNGo0OHp2bTRr&utm_source=qr",
-    },
-    {
-      img: tiktok,
-      link: "https://www.tiktok.com/@lensakita.project?_t=8nC8vLcEp2f&_r=1",
-    },
-    {
-      img: facebook,
-      link: "https://web.facebook.com/people/Lensakitaofficial/61560320370203/",
-    },
-    {
-      img: youtube,
-      link: "https://youtube.com/@lensakitaproject?si=IPqN06vqrzwLR8wC",
-    },
-    {
-      img: whatsapp,
-      link: `whatsapp://send?phone=${number}`,
-    },
-    {
-      img: gmail,
-      link: "mailto:lensakitap@gmail.com",
-    },
-  ];
-
   return (
     <div
       className="relative h-[100vh] px-[5vw] sm:px-[2.5vw]"
@@ -60,7 +27,7 @@ function Contact({ isID }) {
                   </div>
                 </div>
                 <div className="flex gap-5 sm:gap-6">
-                  {data.map((item, i) => (
+                  {ContactAndMedsocData.map((item, i) => (
                     <img
                       key={i}
                       onClick={() => {
