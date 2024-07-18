@@ -440,7 +440,6 @@ const pricelistData = {
 
   additionalServices: [
     {
-      id: "AS01",
       title: "Video teaser",
       price: "600k",
       details: {
@@ -449,7 +448,6 @@ const pricelistData = {
       },
     },
     {
-      id: "AS02",
       title: "Video cinematic",
       price: "800k",
       details: {
@@ -458,7 +456,6 @@ const pricelistData = {
       },
     },
     {
-      id: "AS03",
       title: "Foto soft file only + edit",
       price: "600k",
       details: {
