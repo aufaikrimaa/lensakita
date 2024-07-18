@@ -44,8 +44,8 @@ function DetailPack({ isID, toggleLanguage }) {
             />
           </div>
           <div className="w-5/12 relative">
-            <div className="flex justify-between mb-4">
-              <div className="text-xl font-semibold">
+            <div className="flex justify-between mb-6">
+              <div className="text-xl font-semibold self-center">
                 {isID ? selectedPackage.title.id : selectedPackage.title.en} -{" "}
                 {selectedPackage.pack}
               </div>
