@@ -10,6 +10,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "../components/pricelist/pricelist.css";
 import Footer from "../components/footer/Footer";
+import FormData from "../components/form/FormData";
 
 function DetailPack({ isID, toggleLanguage }) {
   const { id } = useParams();
@@ -176,6 +177,12 @@ function DetailPack({ isID, toggleLanguage }) {
           </div>
         </div>
       </div>
+      <FormData
+        id={selectedPackage.id}
+        title={isID ? selectedPackage.title.id : selectedPackage.title.en}
+        pack={selectedPackage.pack}
+        price={selectedPackage.price}
+      />
       <Footer isID={isID} />
     </div>
   );
