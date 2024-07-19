@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import { number, ContactAndMedsocData } from "../../data/contactData";
+import "./footer.css";
 
 function Footer({ isID }) {
   return (
-    <div className="h-[20rem] px-[5vw] sm:px-[2.5vw] border-t-4 border-lightGray py-4 relative">
+    <div className="h-[20rem] px-[5vw] sm:px-[12vw] border-t-4 border-lightGray py-4 relative">
       <div className="flex justify-between h-full">
         <div className="self-center grid gap-y-4">
           <img
@@ -36,27 +38,89 @@ function Footer({ isID }) {
           </div>
         </div>
         <div className="self-center grid gap-y-4">
-          <div>{isID ? "Kontak" : "Contact"}</div>
-          <div>
-            <div>{number}</div>
-            <div>{number}</div>
-            <div>lensakitap@gmail.com</div>
+          <div className="text-lg font-semibold">
+            {isID ? "Kontak" : "Contact"}
+          </div>
+          <div className="contact-footer text-sm grid gap-y-2">
+            <div>
+              <ion-icon name="call-outline"></ion-icon>+{number}
+            </div>
+            <div>
+              <ion-icon name="logo-whatsapp"></ion-icon>+{number}
+            </div>
+            <div>
+              <ion-icon name="mail-outline"></ion-icon>lensakitap@gmail.com
+            </div>
           </div>
         </div>
         <div className="self-center grid gap-y-4">
-          <div>{isID ? "Layanan Kami" : "Our Services"}</div>
-          <div>
-            <div>{number}</div>
-            <div>{number}</div>
-            <div> @lensakitap@gmail.com</div>
+          <div className="text-lg font-semibold">
+            {isID ? "Layanan Kami" : "Our Services"}
           </div>
+          <Link to="/pricelist">
+            {" "}
+            <div className="service-footer text-sm flex gap-4 cursor-pointer ">
+              <div className="grid gap-y-2">
+                <div>
+                  <ion-icon name="radio-button-on-outline"></ion-icon>
+                  {isID ? "Acara Sekolah" : "School Events"}
+                </div>
+                <div>
+                  <ion-icon name="radio-button-on-outline"></ion-icon>
+                  {isID ? "Wisata Jeep & Liburan" : "Jeep Tour & Vacation"}
+                </div>
+                <div>
+                  <ion-icon name="radio-button-on-outline"></ion-icon>
+                  {isID ? "Pernikahan & Lamaran" : "Wedding & Engagement"}
+                </div>
+                <div>
+                  <ion-icon name="radio-button-on-outline"></ion-icon>
+                  {isID ? "Paket Edit Video" : "Edit Video Package"}
+                </div>
+                <div>
+                  <ion-icon name="radio-button-on-outline"></ion-icon>
+                  {isID ? "Paket Events" : "Events Package"}
+                </div>
+              </div>
+              <div className="grid gap-y-2">
+                <div>
+                  <ion-icon name="radio-button-on-outline"></ion-icon>
+                  {isID ? "Paket Drone" : "Drone Package"}
+                </div>
+                <div>
+                  <ion-icon name="radio-button-on-outline"></ion-icon>
+                  {isID ? "Paket Photographer" : "Photographer Package"}
+                </div>
+                <div>
+                  <ion-icon name="radio-button-on-outline"></ion-icon>
+                  {isID ? "Paket Videographer" : "Videographer Package"}
+                </div>
+                <div>
+                  <ion-icon name="radio-button-on-outline"></ion-icon>
+                  {isID ? "Paket Lengkap" : "Full Package"}
+                </div>
+                <div>
+                  <ion-icon name="radio-button-on-outline"></ion-icon>
+                  {isID ? "Request Layanan" : "Custom Request"}
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
         <div className="self-center grid gap-y-4">
-          <div>Menu</div>
-          <div>
-            <div>{number}</div>
-            <div>{number}</div>
-            <div> @lensakitap@gmail.com</div>
+          <div className="text-lg font-semibold">Menu</div>
+          <div className="service-footer text-sm grid gap-y-2 cursor-pointer">
+            <Link to="/">
+              <ion-icon name="radio-button-on-outline"></ion-icon>
+              {isID ? "Beranda" : "Home"}
+            </Link>
+            <Link to="/pricelist">
+              <ion-icon name="radio-button-on-outline"></ion-icon>Price List
+            </Link>
+            <Link to="/gallery">
+              <ion-icon name="radio-button-on-outline"></ion-icon>
+              {isID ? "Galeri" : "Gallery"}
+            </Link>
           </div>
         </div>
       </div>
