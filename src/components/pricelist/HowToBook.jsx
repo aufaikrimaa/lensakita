@@ -46,8 +46,8 @@ function HowToBook({ isID }) {
         <div className="flex mt-8 justify-end">
           <div className="self-center">
             {isID
-              ? "Kamu juga bisa langsung mengonfirmasi pesananmu melalui kontak whatsapp kami atau klik pada button “diskusi”, kamu juga boleh berdiskusi mengenai harga dari layanan yang kamu pesan"
-              : 'You can also directly confirm your order through our WhatsApp contact or click the "discuss" button to discuss the price of the service you want to book'}
+              ? "Kamu juga bisa langsung melakukan konfirmasi pesananmu melalui kontak whatsapp kami atau klik pada button “Diskusi”, tentukan kesepakatan dan metode pembayaran dari layanan yang kamu pesan"
+              : "You can also directly confirm your order through our WhatsApp contact or click the “Discussion” button to finalize the agreement and payment method for the services you ordered."}
           </div>
           <img src={service4} className="w-[2.8rem] 2xl:w-[3.8rem] ml-3" />
         </div>
