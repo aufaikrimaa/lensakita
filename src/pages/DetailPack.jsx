@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
+import { gsap } from "gsap";
 import { pricelistData } from "../data/pricelistData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation } from "swiper/modules";
@@ -14,6 +16,37 @@ import FormData from "../components/form/FormData";
 
 function DetailPack({ isID, toggleLanguage }) {
   const { id } = useParams();
+  const [isOpen, setIsOpen] = useState(false);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      gsap.fromTo(
+        modalRef.current,
+        { y: "100%", opacity: 0 },
+        { y: "0%", opacity: 1, duration: 0.5, ease: "power3.out" }
+      );
+    } else {
+      gsap.to(modalRef.current, {
+        y: "100%",
+        opacity: 0,
+        duration: 0.5,
+        ease: "power3.in",
+      });
+    }
+  }, [isOpen]);
+
+  const handleModalClose = () => {
+    gsap.to(modalRef.current, {
+      y: "100%",
+      opacity: 0,
+      duration: 0.5,
+      ease: "power3.in",
+      onComplete: () => {
+        setIsOpen(false);
+      },
+    });
+  };
 
   const allPackages = [...pricelistData.wedding.data];
 
@@ -33,9 +66,52 @@ function DetailPack({ isID, toggleLanguage }) {
   }
 
   // console.log(packages);
+  // console.log(isOpen);
   return (
     <div className="bg-white">
       <Navbar isID={isID} toggleLanguage={toggleLanguage} />
+
+      {/* modal form */}
+      <div
+        onClick={handleModalClose}
+        className={`${
+          isOpen ? "block z-40" : "hidden"
+        } h-screen w-full flex fixed justify-center`}
+        style={{
+          backgroundColor: "#001B0Ab4",
+        }}
+      >
+        <div
+          ref={modalRef}
+          onClick={(e) => e.stopPropagation()}
+          className="self-center bg-white mx-4 rounded-lg flex h-[30rem] w-[60vw]"
+        >
+          <div className="h-full w-2/5 relative">
+            <img
+              src={selectedPackage.photo}
+              className="object-cover h-full rounded-l-lg"
+            />
+            <div className="absolute z-20 h-full w-full top-0 bg-gradient-to-t from-[#001B0A] to-[#001B0A33] rounded-l-lg grid content-end p-4 text-white">
+              <div className="text-xl 2xl:text-2xl font-semibold">
+                {isID ? selectedPackage.title.id : selectedPackage.title.en} -{" "}
+                {selectedPackage.pack}
+              </div>
+              <div className="text-lg ">{selectedPackage.price}</div>
+            </div>
+          </div>
+          <div className="w-3/5 p-8">
+            <FormData
+              id={selectedPackage.id}
+              title={isID ? selectedPackage.title.id : selectedPackage.title.en}
+              pack={selectedPackage.pack}
+              price={selectedPackage.price}
+              isID={isID}
+              close={handleModalClose}
+            />
+          </div>
+        </div>
+      </div>
+
       <div className="px-[5vw] sm:px-[2.5vw] pt-24 mb-20">
         <div className="flex justify-between h-[30rem]">
           <div className="h-[30rem] w-1/3">
@@ -70,7 +146,10 @@ function DetailPack({ isID, toggleLanguage }) {
                   ))}
             </div>
             <div className="flex justify-end absolute bottom-0 w-full gap-2">
-              <div className="button bg-buttonSecondary p-4 rounded-full">
+              <div
+                className="button bg-buttonSecondary p-4 rounded-full cursor-pointer"
+                onClick={() => setIsOpen(true)}
+              >
                 <div className="h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden sm:text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-gray text-center">
                   <h2 className="mb-1 sm:mb-0">
                     {isID ? " Pesan Sekarang!" : " Book now!"}
@@ -82,7 +161,7 @@ function DetailPack({ isID, toggleLanguage }) {
                 onClick={() => {
                   window.open(`whatsapp://send?phone=${number}`, "_blank");
                 }}
-                className="button bg-buttonPrimary p-4 rounded-full"
+                className="button bg-buttonPrimary p-4 rounded-full cursor-pointer"
               >
                 <div className="about-icon h-[1.2rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden sm:text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-center">
                   <h2 className="text-white mb-1 sm:mb-0">
@@ -101,7 +180,7 @@ function DetailPack({ isID, toggleLanguage }) {
             <div className="text-lg font-semibold text-textTitle">
               {isID ? "Layanan Tambahan" : "Additional Service"}
             </div>
-            <div className="text-xs">
+            <div className="text-xs italic">
               {isID
                 ? "Layanan ini bisa dipesan secara terpisah (ada beberapa dari layanan ini yang sudah masuk ke dalam paket)"
                 : "This service can be ordered separately (some of these services are already included in the package)"}
@@ -177,12 +256,7 @@ function DetailPack({ isID, toggleLanguage }) {
           </div>
         </div>
       </div>
-      <FormData
-        id={selectedPackage.id}
-        title={isID ? selectedPackage.title.id : selectedPackage.title.en}
-        pack={selectedPackage.pack}
-        price={selectedPackage.price}
-      />
+
       <Footer isID={isID} />
     </div>
   );
