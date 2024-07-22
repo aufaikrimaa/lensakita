@@ -6,6 +6,7 @@ import HowToBook from "./HowToBook";
 import qmark from "../../assets/question-mark.svg";
 import "./pricelist.css";
 import PriceListCard from "./PricelistCard";
+import Footer from "../footer/Footer";
 
 function PriceListComp({ isID }) {
   const [menu, setMenu] = useState("all");
@@ -173,6 +174,9 @@ function PriceListComp({ isID }) {
             </div>
           </div>
         </div>
+      </div>
+      <div className="block sm:hidden">
+        <Footer isID={isID} />
       </div>
     </div>
   );

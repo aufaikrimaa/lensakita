@@ -4,8 +4,8 @@ import "./footer.css";
 
 function Footer({ isID }) {
   return (
-    <div className="h-[20rem] px-[5vw] sm:px-[12vw] border-t-4 border-lightGray py-4 relative">
-      <div className="flex justify-between h-full">
+    <div className="sm:h-[20rem] px-[5vw] sm:px-[12vw] border-t-4 border-lightGray py-4 relative">
+      <div className="flex flex-wrap sm:justify-between h-full gap-8 mb-12 sm:mb-0">
         <div className="self-center grid gap-y-4">
           <img
             src="https://lensakita-images.vercel.app/images/logo-lk-green.png"
@@ -37,11 +37,11 @@ function Footer({ isID }) {
             ))}
           </div>
         </div>
-        <div className="self-center grid gap-y-4">
-          <div className="text-lg font-semibold">
+        <div className="self-center grid gap-y-2 sm:gap-y-4">
+          <div className="text-base sm:text-lg font-semibold">
             {isID ? "Kontak" : "Contact"}
           </div>
-          <div className="contact-footer text-sm grid gap-y-2">
+          <div className="contact-footer text-[0.6rem] sm:text-sm grid gap-y-1 sm:gap-y-2">
             <div>
               <ion-icon name="call-outline"></ion-icon>+{number}
             </div>
@@ -53,14 +53,14 @@ function Footer({ isID }) {
             </div>
           </div>
         </div>
-        <div className="self-center grid gap-y-4">
-          <div className="text-lg font-semibold">
+        <div className="self-center grid gap-y-2 sm:gap-y-4">
+          <div className="text-base sm:text-lg font-semibold">
             {isID ? "Layanan Kami" : "Our Services"}
           </div>
           <Link to="/pricelist">
             {" "}
-            <div className="service-footer text-sm flex gap-4 cursor-pointer ">
-              <div className="grid gap-y-2">
+            <div className="service-footer text-[0.6rem] sm:text-sm flex gap-4 cursor-pointer ">
+              <div className="grid gap-y-1 sm:gap-y-2">
                 <div>
                   <ion-icon name="radio-button-on-outline"></ion-icon>
                   {isID ? "Acara Sekolah" : "School Events"}
@@ -82,7 +82,7 @@ function Footer({ isID }) {
                   {isID ? "Paket Events" : "Events Package"}
                 </div>
               </div>
-              <div className="grid gap-y-2">
+              <div className="grid gap-y-1 sm:gap-y-2">
                 <div>
                   <ion-icon name="radio-button-on-outline"></ion-icon>
                   {isID ? "Paket Drone" : "Drone Package"}
@@ -107,9 +107,9 @@ function Footer({ isID }) {
             </div>
           </Link>
         </div>
-        <div className="self-center grid gap-y-4">
-          <div className="text-lg font-semibold">Menu</div>
-          <div className="service-footer text-sm grid gap-y-2 cursor-pointer">
+        <div className="self-center grid gap-y-2 sm:gap-y-4 hidden sm:block">
+          <div className="text-base sm:text-lg font-semibold">Menu</div>
+          <div className="service-footer text-xs sm:text-sm grid gap-y-1 sm:gap-y-2 cursor-pointer">
             <Link to="/">
               <ion-icon name="radio-button-on-outline"></ion-icon>
               {isID ? "Beranda" : "Home"}
