@@ -46,7 +46,6 @@ function DetailPack({ isID, toggleLanguage }) {
 
   const allPackages = [
     ...pricelistData.wedding.data,
-    ...pricelistData.tour.data,
     ...pricelistData.school.data,
     ...pricelistData.anotherEvents.data,
   ];

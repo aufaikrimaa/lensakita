@@ -198,6 +198,108 @@ const pricelistData = {
         },
       },
       {
+        id: "P01",
+        title: {
+          id: "Paket Pre Wedding",
+          en: "Pre Wedding Package",
+        },
+        pack: "Classic",
+        price: "Rp. 600.000,-",
+        photo: "https://lensakita-images.vercel.app/images/pwd-photo1.jpeg",
+        details: {
+          id: [
+            "Foto Unlimited + Soft File Full Edit",
+            "Dikirim ke Drive",
+            "Waktu Kerja 12 Jam (Max)",
+          ],
+          en: [
+            "Unlimited Photos + Soft File Full Edit",
+            "Sent to Drive",
+            "Working Time 12 Hours (Max)",
+          ],
+        },
+      },
+      {
+        id: "P02",
+        title: {
+          id: "Paket Pre Wedding",
+          en: "Pre Wedding Package",
+        },
+        pack: "Bronze",
+        price: "Rp. 800.000,-",
+        photo: "https://lensakita-images.vercel.app/images/pwd-photo2.jpeg",
+        details: {
+          id: [
+            "Foto Unlimited + Soft File Full Edit",
+            "Dikirim ke Drive",
+            "Waktu Kerja 12 Jam (Max)",
+            "Cetak 12RP + frame 1 foto",
+            "Cetak 4R + frame 5 foto",
+          ],
+          en: [
+            "Unlimited Photos + Soft File Full Edit",
+            "Sent to Drive",
+            "Working Time 12 Hours (Max)",
+            "Print 12RP + frame 1 photo",
+            "Print 4R + frame 5 photos",
+          ],
+        },
+      },
+      {
+        id: "P03",
+        title: {
+          id: "Paket Pre Wedding",
+          en: "Pre Wedding Package",
+        },
+        pack: "Silver",
+        price: "Rp. 900.000,-",
+        photo: "https://lensakita-images.vercel.app/images/pwd-photo3.jpeg",
+        details: {
+          id: [
+            "Foto Unlimited + Soft File Full Edit",
+            "Dikirim ke Drive",
+            "Waktu Kerja 3 Jam (Max)",
+            "Cetak 16RP + frame 1 foto",
+            "Cetak 4RP + frame 5 foto",
+          ],
+          en: [
+            "Unlimited Photos + Soft File Full Edit",
+            "Sent to Drive",
+            "Working Time 3 Hours (Max)",
+            "Print 16RP + frame 1 photo",
+            "Print 4RP + frame 5 photos",
+          ],
+        },
+      },
+      {
+        id: "P04",
+        title: {
+          id: "Paket Pre Wedding",
+          en: "Pre Wedding Package",
+        },
+        pack: "Gold",
+        price: "Rp 1.500.000,-",
+        photo: "https://lensakita-images.vercel.app/images/pwd-photo4.jpeg",
+        details: {
+          id: [
+            "Foto Unlimited + Soft File Full Edit",
+            "Dikirim ke Drive",
+            "Video cinematic (2-3 menit)",
+            "Waktu Kerja 3 Jam (Max)",
+            "Cetak 16RP + frame 1 foto",
+            "Cetak 4RP + frame 5 foto",
+          ],
+          en: [
+            "Unlimited Photos + Soft File Full Edit",
+            "Sent to Drive",
+            "Cinematic video (2-3 minutes)",
+            "Working Time 3 Hours (Max)",
+            "Print 16RP + frame 1 photo",
+            "Print 4RP + frame 5 photos",
+          ],
+        },
+      },
+      {
         id: "E01",
         title: {
           id: "Paket Lamaran",
@@ -205,7 +307,7 @@ const pricelistData = {
         },
         pack: "Classic",
         price: "Rp. 400.000,-",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
+        photo: "https://lensakita-images.vercel.app/images/eng-photo1.jpeg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
@@ -227,7 +329,7 @@ const pricelistData = {
         },
         pack: "Bronze",
         price: "Rp. 600.000,-",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+        photo: "https://lensakita-images.vercel.app/images/eng-photo2.jpeg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
@@ -251,7 +353,7 @@ const pricelistData = {
         },
         pack: "Silver",
         price: "Rp. 800.000,-",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
+        photo: "https://lensakita-images.vercel.app/images/eng-photo3.jpeg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
@@ -281,7 +383,7 @@ const pricelistData = {
         },
         pack: "Gold",
         price: "Rp. 1.000.000,-",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
+        photo: "https://lensakita-images.vercel.app/images/eng-photo4.jpeg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
@@ -309,7 +411,7 @@ const pricelistData = {
         },
         pack: "Platinum",
         price: "Rp. 2.000.000,-",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
+        photo: "https://lensakita-images.vercel.app/images/eng-photo5.jpeg",
         details: {
           id: [
             "Foto Unlimited + Soft File Full Edit",
@@ -330,108 +432,6 @@ const pricelistData = {
             "Sent to Drive",
             "Working Time 5 Hours (Max)",
             "Free BTS",
-          ],
-        },
-      },
-      {
-        id: "P01",
-        title: {
-          id: "Paket Pre Wedding",
-          en: "Pre Wedding Package",
-        },
-        pack: "Classic",
-        price: "Rp. 600.000,-",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
-        details: {
-          id: [
-            "Foto Unlimited + Soft File Full Edit",
-            "Dikirim ke Drive",
-            "Waktu Kerja 12 Jam (Max)",
-          ],
-          en: [
-            "Unlimited Photos + Soft File Full Edit",
-            "Sent to Drive",
-            "Working Time 12 Hours (Max)",
-          ],
-        },
-      },
-      {
-        id: "P02",
-        title: {
-          id: "Paket Pre Wedding",
-          en: "Pre Wedding Package",
-        },
-        pack: "Bronze",
-        price: "Rp. 800.000,-",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
-        details: {
-          id: [
-            "Foto Unlimited + Soft File Full Edit",
-            "Dikirim ke Drive",
-            "Waktu Kerja 12 Jam (Max)",
-            "Cetak 12RP + frame 1 foto",
-            "Cetak 4R + frame 5 foto",
-          ],
-          en: [
-            "Unlimited Photos + Soft File Full Edit",
-            "Sent to Drive",
-            "Working Time 12 Hours (Max)",
-            "Print 12RP + frame 1 photo",
-            "Print 4R + frame 5 photos",
-          ],
-        },
-      },
-      {
-        id: "P03",
-        title: {
-          id: "Paket Pre Wedding",
-          en: "Pre Wedding Package",
-        },
-        pack: "Silver",
-        price: "Rp. 900.000,-",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
-        details: {
-          id: [
-            "Foto Unlimited + Soft File Full Edit",
-            "Dikirim ke Drive",
-            "Waktu Kerja 3 Jam (Max)",
-            "Cetak 16RP + frame 1 foto",
-            "Cetak 4RP + frame 5 foto",
-          ],
-          en: [
-            "Unlimited Photos + Soft File Full Edit",
-            "Sent to Drive",
-            "Working Time 3 Hours (Max)",
-            "Print 16RP + frame 1 photo",
-            "Print 4RP + frame 5 photos",
-          ],
-        },
-      },
-      {
-        id: "P04",
-        title: {
-          id: "Paket Pre Wedding",
-          en: "Pre Wedding Package",
-        },
-        pack: "Gold",
-        price: "Rp 1.500.000,-",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
-        details: {
-          id: [
-            "Foto Unlimited + Soft File Full Edit",
-            "Dikirim ke Drive",
-            "Video cinematic (2-3 menit)",
-            "Waktu Kerja 3 Jam (Max)",
-            "Cetak 16RP + frame 1 foto",
-            "Cetak 4RP + frame 5 foto",
-          ],
-          en: [
-            "Unlimited Photos + Soft File Full Edit",
-            "Sent to Drive",
-            "Cinematic video (2-3 minutes)",
-            "Working Time 3 Hours (Max)",
-            "Print 16RP + frame 1 photo",
-            "Print 4RP + frame 5 photos",
           ],
         },
       },
@@ -699,7 +699,7 @@ const pricelistData = {
         },
         pack: "",
         price: "Rp 500.000 - Rp 2.000.000",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo4.jpg",
+        photo: "https://lensakita-images.vercel.app/images/tour-photo1.jpg",
         details: {
           id: [
             "Harga Rp 500.000,- per baterai drone (durasi terbang ± 30 menit)",
@@ -731,7 +731,7 @@ const pricelistData = {
         },
         pack: "",
         price: "Rp 1.000.000 / 7 jam",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo4.jpg",
+        photo: "https://lensakita-images.vercel.app/images/tm-photo4.jpg",
         details: {
           id: [
             "1 photografer",
@@ -752,8 +752,8 @@ const pricelistData = {
           en: "Videographer Package",
         },
         pack: "",
-        price: "Rp 3.000.000 / hari",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo4.jpg",
+        price: "Rp 3.000.000 / day",
+        photo: "https://lensakita-images.vercel.app/images/photo6.jpg",
         details: {
           id: [
             "2 videografer",
@@ -776,8 +776,8 @@ const pricelistData = {
           en: "Event Package",
         },
         pack: "",
-        price: "Rp 3.000.000 / hari",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo4.jpg",
+        price: "Rp 3.000.000 / day",
+        photo: "https://lensakita-images.vercel.app/images/kpu-photo15.jpg",
         details: {
           id: [
             "1 drone pilot, 1 videografer",
@@ -802,8 +802,8 @@ const pricelistData = {
           en: "Full Package",
         },
         pack: "",
-        price: "Rp 4.000.000 / hari",
-        photo: "https://lensakita-images.vercel.app/images/wd-photo4.jpg",
+        price: "Rp 4.000.000 / day",
+        photo: "https://lensakita-images.vercel.app/images/tk-photo1.jpg",
         details: {
           id: [
             "1 drone pilot, 1 videografer, 1 photografer",
