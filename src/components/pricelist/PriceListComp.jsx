@@ -80,7 +80,7 @@ function PriceListComp({ isID }) {
 
       {/* content */}
       <div className="relative bg-secondary px-[5vw] sm:px-[2.5vw]">
-        <div className="h-[6rem] sm:h-[5rem] bg-white fixed w-full z-10"></div>
+        <div className="h-[6rem] sm:h-[4rem] 2xl:h-[6rem] bg-white fixed w-full z-10"></div>
         <div className="sm:flex py-[5vw] sm:py-[vw]">
           <div className="pricelist-content bg-white w-[90vw] sm:w-[53vw] 2xl:w-[55vw] fixed mt-4 sm:mt-0 flex flex-col items-center sm:items-start z-20">
             <div className="w-full overflow-x-auto  gap-x-1 text-xs xl:text-[0.7rem] 2xl:text-xs mt-8 sm:mt-0 justify-center sm:pr-4">
@@ -107,7 +107,7 @@ function PriceListComp({ isID }) {
                   </div>
                   {isID ? "Acara Sekolah" : "School Events"}
                 </div>
-                <div
+                {/* <div
                   className={`grid justify-items-center w-[6rem] sm:w-[8rem] 2xl:w-[10rem] my-1 p-1 sm:p-2  hover:bg-buttonSecondary cursor-pointer rounded-md transition ease-in-out text-center ${
                     menu === "jeep" ? "bg-buttonSecondary" : ""
                   }`}
@@ -117,7 +117,7 @@ function PriceListComp({ isID }) {
                     <ion-icon name="car-outline"></ion-icon>
                   </div>
                   {isID ? "Wisata Jeep & Liburan" : "Jeep Tour & Vacation"}
-                </div>
+                </div> */}
                 <div
                   className={`grid justify-items-center w-[6rem] sm:w-[8rem] 2xl:w-[10rem] my-1 p-1 sm:p-2  hover:bg-buttonSecondary cursor-pointer rounded-md transition ease-in-out text-center ${
                     menu === "wd" ? "bg-buttonSecondary" : ""
@@ -150,10 +150,36 @@ function PriceListComp({ isID }) {
               className="w-full my-masonry-grid flex"
               columnClassName="my-masonry-grid_column"
             >
-              {pricelistData.wedding.data.map((item, i) => (
+              {pricelistData.anotherEvents.data.length > 0 &&
+                (menu === "all" || menu === "anev") &&
+                pricelistData.anotherEvents.data.map((item, i) => (
+                  <div className="px-2" key={i}>
+                    <PriceListCard
+                      id={item.id}
+                      photo={item.photo}
+                      title={isID ? item.title.id : item.title.en}
+                      pack={item.pack}
+                      price={item.price}
+                    />
+                  </div>
+                ))}
+              {pricelistData.school.data.length > 0 &&
+                (menu === "all" || menu === "school") &&
+                pricelistData.school.data.map((item, i) => (
+                  <div className="px-2" key={i}>
+                    <PriceListCard
+                      id={item.id}
+                      photo={item.photo}
+                      title={isID ? item.title.id : item.title.en}
+                      pack={item.pack}
+                      price={item.price}
+                    />
+                  </div>
+                ))}
+              {/* {pricelistData.tour.data.map((item, i) => (
                 <div
                   className={`px-2 ${
-                    menu === "all" || menu === "wd" ? "block" : "hidden"
+                    menu === "all" || menu === "jeep" ? "block" : "hidden"
                   }`}
                   key={i}
                 >
@@ -165,10 +191,23 @@ function PriceListComp({ isID }) {
                     price={item.price}
                   />
                 </div>
-              ))}
+              ))} */}
+              {pricelistData.wedding.data.length > 0 &&
+                (menu === "all" || menu === "wd") &&
+                pricelistData.wedding.data.map((item, i) => (
+                  <div className="px-2" key={i}>
+                    <PriceListCard
+                      id={item.id}
+                      photo={item.photo}
+                      title={isID ? item.title.id : item.title.en}
+                      pack={item.pack}
+                      price={item.price}
+                    />
+                  </div>
+                ))}
             </Masonry>
           </div>
-          <div className="mt-2 hidden sm:block">
+          <div className="mt-2 hidden sm:block z-20">
             <div className="fixed h-[87%] sm:w-[42%] 2xl:w-[40%] rounded-xl p-8 bg-lightGray">
               <HowToBook isID={isID} />
             </div>

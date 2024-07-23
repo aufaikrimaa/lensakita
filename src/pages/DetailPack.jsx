@@ -44,7 +44,12 @@ function DetailPack({ isID, toggleLanguage }) {
     });
   };
 
-  const allPackages = [...pricelistData.wedding.data];
+  const allPackages = [
+    ...pricelistData.wedding.data,
+    ...pricelistData.tour.data,
+    ...pricelistData.school.data,
+    ...pricelistData.anotherEvents.data,
+  ];
 
   const selectedPackage = allPackages.find((pkg) => pkg.id === id);
 
@@ -55,7 +60,14 @@ function DetailPack({ isID, toggleLanguage }) {
     selectedPackage.id.includes("P")
   ) {
     packages = [...pricelistData.wedding.data];
+  } else if (selectedPackage.id.includes("V")) {
+    packages = [...pricelistData.anotherEvents.data];
+  } else if (selectedPackage.id.includes("S")) {
+    packages = [...pricelistData.school.data];
   }
+  // else if (selectedPackage.id.includes("T")) {
+  //   packages = [...pricelistData.tour.data];
+  // }
 
   if (!selectedPackage) {
     return <div>Package not found</div>;
@@ -89,8 +101,8 @@ function DetailPack({ isID, toggleLanguage }) {
             />
             <div className="absolute z-20 h-full w-full top-0 bg-gradient-to-t from-[#001B0A] to-[#001B0A33] xs:rounded-t-lg sm:rounded-l-lg grid content-end p-4 text-white">
               <div className="sm:text-xl 2xl:text-2xl font-semibold">
-                {isID ? selectedPackage.title.id : selectedPackage.title.en} -{" "}
-                {selectedPackage.pack}
+                {isID ? selectedPackage.title.id : selectedPackage.title.en}
+                {selectedPackage.pack === "" ? "" : "-" + selectedPackage.pack}
               </div>
               <div className="text-lg ">{selectedPackage.price}</div>
             </div>
@@ -119,8 +131,8 @@ function DetailPack({ isID, toggleLanguage }) {
           <div className="sm:w-5/12 sm:relative">
             <div className="flex justify-between mb-5 sm:mb-6 mt-6 sm:mt-0">
               <div className="text-base sm:text-xl font-semibold self-center">
-                {isID ? selectedPackage.title.id : selectedPackage.title.en} -{" "}
-                {selectedPackage.pack}
+                {isID ? selectedPackage.title.id : selectedPackage.title.en}
+                {selectedPackage.pack === "" ? "" : "-" + selectedPackage.pack}
               </div>
               <div className="text-xl sm:text-3xl font-bold text-textTitle">
                 {selectedPackage.price}
@@ -174,7 +186,12 @@ function DetailPack({ isID, toggleLanguage }) {
                               {d}
                             </div>
                           ))
-                        : item.details.en}
+                        : item.details.en.map((d, i) => (
+                            <div key={i}>
+                              <ion-icon name="radio-button-on-outline"></ion-icon>
+                              {d}
+                            </div>
+                          ))}
                     </div>
                   </div>
                 ))}

@@ -4,7 +4,7 @@ function PriceListCard({ photo, title, pack, price, id }) {
   return (
     <Link to={`/pack/${id}`}>
       <div className="w-full bg-white rounded-lg overflow-hidden hover:bg-lightGray cursor-pointer">
-        <div className="h-30 xl:h-36 2xl:h-48">
+        <div className="h-40 xl:h-36 2xl:h-48">
           <img
             src={photo}
             className="w-full h-full object-cover rounded-lg"

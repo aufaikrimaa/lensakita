@@ -22,6 +22,8 @@ const dataPhoto = [
   "https://lensakita-images.vercel.app/images/gr-photo2.jpg",
   "https://lensakita-images.vercel.app/images/gr-photo4.jpg",
   "https://lensakita-images.vercel.app/images/gr-photo5.jpg",
+  "https://lensakita-images.vercel.app/images/wd-photo4.jpg",
+  "https://lensakita-images.vercel.app/images/wd-photo5.jpg",
   "https://lensakita-images.vercel.app/images/wd-photo6.jpg",
   "https://lensakita-images.vercel.app/images/wd-photo3.jpg",
   "https://lensakita-images.vercel.app/images/wd-photo7.jpg",
