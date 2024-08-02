@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { number } from "../../data/contactData";
 
 function ButtonDetailPricelist({ handleOpen, isID }) {
@@ -35,4 +36,4 @@ function ButtonDetailPricelist({ handleOpen, isID }) {
   );
 }
 
-export default ButtonDetailPricelist;
+export default memo(ButtonDetailPricelist);

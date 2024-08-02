@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { number, ContactAndMedsocData } from "../../data/contactData";
 import "./footer.css";
@@ -133,4 +134,4 @@ function Footer({ isID }) {
   );
 }
 
-export default Footer;
+export default memo(Footer);

@@ -1,4 +1,4 @@
-import ComingSoon from "../components/ComingSoon";
+import { memo } from "react";
 import Hero from "../components/hero/Hero";
 import Navbar from "../components/navbar/Navbar";
 import PriceListComp from "../components/pricelist/PriceListComp";
@@ -12,4 +12,4 @@ function PriceList({ isID, toggleLanguage }) {
   );
 }
 
-export default PriceList;
+export default memo(PriceList);

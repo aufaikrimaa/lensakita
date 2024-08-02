@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -101,4 +102,4 @@ function WhyUs({ isID }) {
   );
 }
 
-export default WhyUs;
+export default memo(WhyUs);

@@ -1,5 +1,5 @@
+import { useState, useEffect, memo } from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
 
 function FormData({ id, title, pack, price, isID, close }) {
   const [nama, setNama] = useState("");
@@ -143,4 +143,4 @@ function FormData({ id, title, pack, price, isID, close }) {
   );
 }
 
-export default FormData;
+export default memo(FormData);

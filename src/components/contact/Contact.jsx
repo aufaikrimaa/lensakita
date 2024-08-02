@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { ContactAndMedsocData } from "../../data/contactData";
 
 function Contact({ isID }) {
@@ -50,4 +51,4 @@ function Contact({ isID }) {
   );
 }
 
-export default Contact;
+export default memo(Contact);

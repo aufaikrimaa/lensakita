@@ -1,3 +1,4 @@
+import { memo } from "react";
 import service1 from "../../assets/service1.svg";
 import service2 from "../../assets/service2.svg";
 import service3 from "../../assets/service3.svg";
@@ -83,4 +84,4 @@ function HowToBook({ isID }) {
   );
 }
 
-export default HowToBook;
+export default memo(HowToBook);

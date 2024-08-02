@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 import { gsap } from "gsap";
 import { pricelistData } from "../../data/pricelistData";
 import Masonry from "react-masonry-css";
@@ -221,4 +221,4 @@ function PriceListComp({ isID }) {
   );
 }
 
-export default PriceListComp;
+export default memo(PriceListComp);

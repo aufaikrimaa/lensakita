@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Navbar from "../components/navbar/Navbar";
 import About from "../components/about/About";
 import Hero from "../components/hero/Hero";
@@ -20,4 +21,4 @@ function Home({ isID, toggleLanguage }) {
   );
 }
 
-export default Home;
+export default memo(Home);

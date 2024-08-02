@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { gsap } from "gsap";
 import { Power2 } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -171,4 +171,4 @@ function Packs({ isID }) {
   );
 }
 
-export default Packs;
+export default memo(Packs);

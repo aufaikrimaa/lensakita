@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./hero.css";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
@@ -156,4 +157,4 @@ function Hero({ isID }) {
   );
 }
 
-export default Hero;
+export default memo(Hero);

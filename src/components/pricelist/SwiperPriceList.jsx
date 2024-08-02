@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation } from "swiper/modules";
 import PriceListCard from "./PricelistCard";
@@ -56,4 +57,4 @@ function SwiperPriceList({ packages, isID, id }) {
   );
 }
 
-export default SwiperPriceList;
+export default memo(SwiperPriceList);

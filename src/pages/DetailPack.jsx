@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, memo } from "react";
 import { useParams } from "react-router-dom";
 import { gsap } from "gsap";
 import { pricelistData } from "../data/pricelistData";
-import { number } from "../data/contactData";
 import Navbar from "../components/navbar/Navbar";
 import "../components/pricelist/pricelist.css";
 import Footer from "../components/footer/Footer";
@@ -210,4 +209,4 @@ function DetailPack({ isID, toggleLanguage }) {
   );
 }
 
-export default DetailPack;
+export default memo(DetailPack);

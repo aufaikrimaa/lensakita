@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 
 function PriceListCard({ photo, title, pack, price, id }) {
@@ -24,4 +25,4 @@ function PriceListCard({ photo, title, pack, price, id }) {
   );
 }
 
-export default PriceListCard;
+export default memo(PriceListCard);

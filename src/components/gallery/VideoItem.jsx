@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { memo } from "react";
 import instagram from "../../assets/instagram-icon.svg";
 
 function VideoItem({ cover, link }) {
@@ -33,4 +33,4 @@ function VideoItem({ cover, link }) {
   );
 }
 
-export default VideoItem;
+export default memo(VideoItem);

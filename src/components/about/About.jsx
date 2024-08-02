@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -133,4 +134,4 @@ function About({ isID }) {
   );
 }
 
-export default About;
+export default memo(About);

@@ -1,10 +1,10 @@
+import { useState, memo } from "react";
 import Masonry from "react-masonry-css";
-import "./gallery.css";
-import { useState } from "react";
 import dataPhoto from "../../data/photoData";
 import dataVideo from "../../data/videoData";
 import VideoItem from "./VideoItem";
 import Footer from "../footer/Footer";
+import "./gallery.css";
 
 function ItemGallery({ isID }) {
   const [menu, setMenu] = useState("photos");
@@ -76,4 +76,4 @@ function ItemGallery({ isID }) {
   );
 }
 
-export default ItemGallery;
+export default memo(ItemGallery);

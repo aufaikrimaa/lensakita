@@ -1,7 +1,7 @@
+import { memo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { serviceData } from "../../data/serviceData";
-import dataPhoto from "../../data/photoData";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Link } from "react-router-dom";
@@ -65,4 +65,4 @@ function ServiceSlide({ isID }) {
     </div>
   );
 }
-export default ServiceSlide;
+export default memo(ServiceSlide);
