@@ -1,7 +1,10 @@
-import { useState, useEffect, memo } from "react";
+import { useState, useEffect, memo, useContext } from "react";
 import axios from "axios";
+import { LanguageContext } from "../../App";
 
-function FormData({ id, title, pack, price, isID, close }) {
+function FormData({ id, title, pack, price, close }) {
+  const { isID } = useContext(LanguageContext);
+
   const [nama, setNama] = useState("");
   const [email, setEmail] = useState("");
   const [noTelp, setNoTelp] = useState("");

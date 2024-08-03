@@ -1,7 +1,9 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { number } from "../../data/contactData";
+import { LanguageContext } from "../../App";
 
-function ButtonDetailPricelist({ handleOpen, isID }) {
+function ButtonDetailPricelist({ handleOpen }) {
+  const { isID } = useContext(LanguageContext);
   return (
     <div className="flex sm:justify-end justify-center sm:absolute bottom-0 w-full gap-2">
       <div

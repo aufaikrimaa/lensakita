@@ -1,12 +1,14 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LanguageContext } from "../../App";
 import "./whyus.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function WhyUs({ isID }) {
+function WhyUs() {
+  const { isID } = useContext(LanguageContext);
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {

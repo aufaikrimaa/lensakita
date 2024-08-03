@@ -1,8 +1,10 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { Link } from "react-router-dom";
+import { LanguageContext } from "../../App";
 import "./navbar.css";
 
-function Navbar({ isID, toggleLanguage }) {
+function Navbar() {
+  const { isID, toggleLanguage } = useContext(LanguageContext);
   return (
     <div className="fixed w-full flex items-center justify-between px-[5vw] py-[4vw] sm:px-[2.5vw] cursor-pointer sm:py-[2vw] z-30 mix-blend-difference">
       <div className="lftNav h-[4.5vw] sm:h-[2vw]  overflow-hidden text-[4.5vw] leading-[5vw] sm:text-[1.5vw] sm:leading-[1.8vw] tracking-tighter text-[#fff]">

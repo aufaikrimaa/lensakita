@@ -1,12 +1,15 @@
-import { useState, memo } from "react";
+import { useState, memo, useContext } from "react";
 import Masonry from "react-masonry-css";
 import dataPhoto from "../../data/photoData";
 import dataVideo from "../../data/videoData";
 import VideoItem from "./VideoItem";
 import Footer from "../footer/Footer";
 import "./gallery.css";
+import { LanguageContext } from "../../App";
 
-function ItemGallery({ isID }) {
+function ItemGallery() {
+  const { isID } = useContext(LanguageContext);
+
   const [menu, setMenu] = useState("photos");
 
   const breakpointColumnsObj = {
@@ -70,7 +73,7 @@ function ItemGallery({ isID }) {
         </div>
       </div>
       <div className="block sm:hidden">
-        <Footer isID={isID} />
+        <Footer />
       </div>
     </>
   );

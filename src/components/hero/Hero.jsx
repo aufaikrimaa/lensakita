@@ -1,12 +1,15 @@
-import { memo } from "react";
-import "./hero.css";
+import { memo, useContext } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LanguageContext } from "../../App";
+import "./hero.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Hero({ isID }) {
+function Hero() {
+  const { isID } = useContext(LanguageContext);
+
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {

@@ -1,7 +1,9 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { ContactAndMedsocData } from "../../data/contactData";
+import { LanguageContext } from "../../App";
 
-function Contact({ isID }) {
+function Contact() {
+  const { isID } = useContext(LanguageContext);
   return (
     <div
       className="relative h-[100vh] px-[5vw] sm:px-[2.5vw]"

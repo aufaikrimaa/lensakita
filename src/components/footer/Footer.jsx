@@ -1,9 +1,11 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { Link } from "react-router-dom";
 import { number, ContactAndMedsocData } from "../../data/contactData";
+import { LanguageContext } from "../../App";
 import "./footer.css";
 
-function Footer({ isID }) {
+function Footer() {
+  const { isID } = useContext(LanguageContext);
   return (
     <div className="sm:h-[20rem] px-[5vw] sm:px-[12vw] border-t-4 border-lightGray py-4 relative">
       <div className="flex flex-wrap sm:justify-between h-full gap-8 mb-12 sm:mb-0">

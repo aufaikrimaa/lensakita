@@ -1,13 +1,12 @@
 import { memo } from "react";
-import Hero from "../components/hero/Hero";
 import Navbar from "../components/navbar/Navbar";
 import PriceListComp from "../components/pricelist/PriceListComp";
 
-function PriceList({ isID, toggleLanguage }) {
+function PriceList() {
   return (
     <>
-      <Navbar isID={isID} toggleLanguage={toggleLanguage} />
-      <PriceListComp isID={isID} />
+      <Navbar />
+      <PriceListComp />
     </>
   );
 }

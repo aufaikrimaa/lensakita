@@ -1,12 +1,14 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation } from "swiper/modules";
+import { LanguageContext } from "../../App";
 import PriceListCard from "./PricelistCard";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 
-function SwiperPriceList({ packages, isID, id }) {
+function SwiperPriceList({ packages, id }) {
+  const { isID } = useContext(LanguageContext);
   return (
     <>
       <div className="text-sm sm:text-lg font-semibold py-2">

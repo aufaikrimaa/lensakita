@@ -1,15 +1,18 @@
-import { useEffect, useRef, useState, memo } from "react";
+import { useEffect, useRef, useState, memo, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { gsap } from "gsap";
+import { LanguageContext } from "../App";
 import { pricelistData } from "../data/pricelistData";
 import Navbar from "../components/navbar/Navbar";
-import "../components/pricelist/pricelist.css";
 import Footer from "../components/footer/Footer";
 import FormData from "../components/form/FormData";
 import SwiperPriceList from "../components/pricelist/SwiperPriceList";
 import ButtonDetailPricelist from "../components/pricelist/ButtonDetailPricelist";
+import "../components/pricelist/pricelist.css";
 
-function DetailPack({ isID, toggleLanguage }) {
+function DetailPack() {
+  const { isID } = useContext(LanguageContext);
+
   const { id } = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef(null);
@@ -75,7 +78,7 @@ function DetailPack({ isID, toggleLanguage }) {
   // console.log(isOpen);
   return (
     <div className="bg-white">
-      <Navbar isID={isID} toggleLanguage={toggleLanguage} />
+      <Navbar />
 
       {/* modal form */}
       <div
@@ -111,7 +114,6 @@ function DetailPack({ isID, toggleLanguage }) {
               title={isID ? selectedPackage.title.id : selectedPackage.title.en}
               pack={selectedPackage.pack}
               price={selectedPackage.price}
-              isID={isID}
               close={handleModalClose}
             />
           </div>
@@ -152,14 +154,11 @@ function DetailPack({ isID, toggleLanguage }) {
                   ))}
             </div>
             <div className="mt-8">
-              <ButtonDetailPricelist
-                handleOpen={() => setIsOpen(true)}
-                isID={isID}
-              />
+              <ButtonDetailPricelist handleOpen={() => setIsOpen(true)} />
             </div>
           </div>
           <div className="mt-8 block sm:hidden mb-12">
-            <SwiperPriceList packages={packages} isID={isID} id={id} />
+            <SwiperPriceList packages={packages} id={id} />
           </div>
           <div className="sm:w-1/5 bg-lightGray rounded-lg p-3">
             <div className="text-lg font-semibold text-textTitle">
@@ -200,11 +199,11 @@ function DetailPack({ isID, toggleLanguage }) {
           </div>
         </div>
         <div className="mt-20 hidden sm:block">
-          <SwiperPriceList packages={packages} isID={isID} id={id} />
+          <SwiperPriceList packages={packages} id={id} />
         </div>
       </div>
 
-      <Footer isID={isID} />
+      <Footer />
     </div>
   );
 }

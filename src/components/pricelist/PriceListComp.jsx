@@ -1,14 +1,17 @@
-import { useState, useEffect, useRef, memo } from "react";
+import { useState, useEffect, useRef, memo, useContext } from "react";
 import { gsap } from "gsap";
 import { pricelistData } from "../../data/pricelistData";
+import { LanguageContext } from "../../App";
 import Masonry from "react-masonry-css";
 import HowToBook from "./HowToBook";
 import qmark from "../../assets/question-mark.svg";
-import "./pricelist.css";
 import PriceListCard from "./PricelistCard";
 import Footer from "../footer/Footer";
+import "./pricelist.css";
 
-function PriceListComp({ isID }) {
+function PriceListComp() {
+  const { isID } = useContext(LanguageContext);
+
   const [menu, setMenu] = useState("all");
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef(null);
@@ -74,7 +77,7 @@ function PriceListComp({ isID }) {
           ref={modalRef}
           className="self-center bg-white mx-4 p-6 rounded-lg"
         >
-          <HowToBook isID={isID} />
+          <HowToBook />
         </div>
       </div>
 
@@ -209,13 +212,13 @@ function PriceListComp({ isID }) {
           </div>
           <div className="mt-2 hidden sm:block z-20">
             <div className="fixed h-[87%] sm:w-[42%] 2xl:w-[40%] rounded-xl p-8 bg-lightGray">
-              <HowToBook isID={isID} />
+              <HowToBook />
             </div>
           </div>
         </div>
       </div>
       <div className="block sm:hidden">
-        <Footer isID={isID} />
+        <Footer />
       </div>
     </div>
   );

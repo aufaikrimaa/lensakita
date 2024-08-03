@@ -1,4 +1,4 @@
-import { useRef, memo } from "react";
+import { useRef, memo, useContext } from "react";
 import { gsap } from "gsap";
 import { Power2 } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,11 +7,14 @@ import { Link } from "react-router-dom";
 import { schoolEvent, tour, graduation, wd } from "../../data/serviceData";
 import Masonry from "react-masonry-css";
 import ReactPlayer from "react-player";
+import { LanguageContext } from "../../App";
 import "./packs.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Packs({ isID }) {
+function Packs() {
+  const { isID } = useContext(LanguageContext);
+
   const container = useRef(null);
 
   useGSAP(() => {

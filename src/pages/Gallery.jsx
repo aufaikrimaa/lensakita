@@ -2,11 +2,11 @@ import { memo } from "react";
 import ItemGallery from "../components/gallery/ItemGallery";
 import Navbar from "../components/navbar/Navbar";
 
-function Gallery({ isID, toggleLanguage }) {
+function Gallery() {
   return (
     <>
-      <Navbar isID={isID} toggleLanguage={toggleLanguage} />
-      <ItemGallery isID={isID} />
+      <Navbar />
+      <ItemGallery />
     </>
   );
 }

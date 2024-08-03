@@ -1,14 +1,17 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import { number } from "../../data/contactData";
 import "./about.css";
+import { LanguageContext } from "../../App";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function About({ isID }) {
+function About() {
+  const { isID } = useContext(LanguageContext);
+
   useGSAP(() => {
     let mm = gsap.matchMedia();
 

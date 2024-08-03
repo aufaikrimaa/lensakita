@@ -1,12 +1,14 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
+import { LanguageContext } from "../../App";
+import { number } from "../../data/contactData";
 import service1 from "../../assets/service1.svg";
 import service2 from "../../assets/service2.svg";
 import service3 from "../../assets/service3.svg";
 import service4 from "../../assets/service4.svg";
 import service5 from "../../assets/service5.svg";
-import { number } from "../../data/contactData";
 
-function HowToBook({ isID }) {
+function HowToBook() {
+  const { isID } = useContext(LanguageContext);
   return (
     <div>
       <div className="text-gray font-bold text-lg sm:text-xl 2xl:text-2xl">

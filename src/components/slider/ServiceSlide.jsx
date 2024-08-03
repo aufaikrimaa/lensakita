@@ -1,12 +1,15 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { serviceData } from "../../data/serviceData";
+import { Link } from "react-router-dom";
+import { LanguageContext } from "../../App";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Link } from "react-router-dom";
 
-function ServiceSlide({ isID }) {
+function ServiceSlide() {
+  const { isID } = useContext(LanguageContext);
+
   return (
     <div className="">
       <Swiper
