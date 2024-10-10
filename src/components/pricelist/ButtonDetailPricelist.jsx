@@ -19,7 +19,7 @@ function ButtonDetailPricelist({ handleOpen }) {
       </div>
       <div
         onClick={() => {
-          window.open(`whatsapp://send?phone=${number}`, "_blank");
+          window.open(`https://wa.me/${number}`, "_blank");
         }}
         className="button bg-buttonPrimary p-4 rounded-full cursor-pointer"
       >

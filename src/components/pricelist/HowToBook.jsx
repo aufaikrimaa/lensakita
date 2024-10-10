@@ -66,7 +66,7 @@ function HowToBook() {
       <div className="flex mt-10 sm:mt-3 2xl:mt-4 justify-end">
         <div
           onClick={() => {
-            window.open(`whatsapp://send?phone=${number}`, "_blank");
+            window.open(`https://wa.me/${number}`, "_blank");
           }}
           className="button bg-buttonPrimary p-2 rounded-full  flex justify-end sm:w-[30%]"
         >

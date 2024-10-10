@@ -106,7 +106,7 @@ function About() {
         <div className="cta flex items-center justify-between sm:gap-[1vw] cursor-pointer">
           <div
             onClick={() => {
-              window.open(`whatsapp://send?phone=${number}`, "_blank");
+              window.open(`https://wa.me/${number}`, "_blank");
             }}
             className="button bg-buttonPrimary p-4 rounded-full"
           >

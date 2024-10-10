@@ -26,7 +26,7 @@ const ContactAndMedsocData = [
   },
   {
     img: whatsapp,
-    link: `whatsapp://send?phone=${number}`,
+    link: `https://wa.me/${number}`,
   },
   {
     img: gmail,
