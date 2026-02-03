@@ -2,137 +2,143 @@ import { memo, useContext } from "react";
 import { Link } from "react-router-dom";
 import { number, ContactAndMedsocData } from "../../data/contactData";
 import { LanguageContext } from "../../App";
-import "./footer.css";
 
 function Footer() {
   const { isID } = useContext(LanguageContext);
+
+  const services = [
+    { labelId: "Acara Sekolah", labelEn: "School Events" },
+    { labelId: "Pernikahan", labelEn: "Wedding" },
+    { labelId: "Paket Event", labelEn: "Event Package" },
+    { labelId: "Paket Drone", labelEn: "Drone Package" },
+    { labelId: "Custom Request", labelEn: "Custom Request" },
+  ];
+
+  const navLinks = [
+    { to: "/", labelId: "Beranda", labelEn: "Home" },
+    { to: "/pricelist", labelId: "Harga", labelEn: "Pricing" },
+    { to: "/gallery", labelId: "Galeri", labelEn: "Gallery" },
+  ];
+
   return (
-    <div className="sm:h-[20rem] px-[5vw] sm:px-[12vw] border-t-4 border-lightGray py-4 relative">
-      <div className="flex flex-wrap sm:justify-between h-full gap-8 mb-12 sm:mb-0">
-        <div className="self-center grid gap-y-4">
-          <img
-            src="https://lensakita-images.vercel.app/images/logo-lk-green.png"
-            className="h-8"
-          />
-          <div className="text-xs">
-            {isID ? (
-              <>
-                Jasa Photography dan Videography untuk kebutuhan
-                <br /> dan acara apapun
-              </>
-            ) : (
-              <>
-                Photography and Videography Services for Any Needs
-                <br /> and Events
-              </>
-            )}
-          </div>
-          <div className="flex gap-2">
-            {ContactAndMedsocData.map((item, i) => (
-              <img
-                key={i}
-                onClick={() => {
-                  window.open(item.link, "_blank");
-                }}
-                src={item.img}
-                className="h-7 sm:h-9 w-auto hover:scale-125 transition ease-in-out cursor-pointer"
-              />
-            ))}
-          </div>
-        </div>
-        <div className="self-center grid gap-y-2 sm:gap-y-4">
-          <div className="text-base sm:text-lg font-semibold">
-            {isID ? "Kontak" : "Contact"}
-          </div>
-          <div className="contact-footer text-[0.6rem] sm:text-sm grid gap-y-1 sm:gap-y-2">
-            <div>
-              <ion-icon name="call-outline"></ion-icon>+{number}
-            </div>
-            <div>
-              <ion-icon name="logo-whatsapp"></ion-icon>+{number}
-            </div>
-            <div>
-              <ion-icon name="mail-outline"></ion-icon>lensakitap@gmail.com
+    <footer className="bg-slate-900 text-white">
+      <div className="container-main py-12 sm:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-1">
+            <img
+              src="https://lensakita-images.vercel.app/images/logo-lk-white.png"
+              alt="Lensakita"
+              className="h-8 mb-4"
+            />
+            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              {isID
+                ? "Jasa dokumentasi profesional untuk setiap momen berharga Anda."
+                : "Professional documentation services for your precious moments."}
+            </p>
+            <div className="flex gap-3">
+              {ContactAndMedsocData.map((item, i) => (
+                <button
+                  key={i}
+                  onClick={() => window.open(item.link, "_blank")}
+                  className="w-10 h-10 bg-slate-800 hover:bg-slate-700 rounded-full flex items-center justify-center transition-colors"
+                >
+                  <img src={item.img} className="w-5 h-5" alt="" />
+                </button>
+              ))}
             </div>
           </div>
-        </div>
-        <div className="self-center grid gap-y-2 sm:gap-y-4">
-          <div className="text-base sm:text-lg font-semibold">
-            {isID ? "Layanan Kami" : "Our Services"}
+
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">
+              {isID ? "Layanan" : "Services"}
+            </h4>
+            <ul className="space-y-2.5">
+              {services.map((service, i) => (
+                <li key={i}>
+                  <Link
+                    to="/pricelist"
+                    className="text-slate-400 hover:text-white text-sm transition-colors"
+                  >
+                    {isID ? service.labelId : service.labelEn}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          <Link to="/pricelist">
-            {" "}
-            <div className="service-footer text-[0.6rem] sm:text-sm flex gap-4 cursor-pointer ">
-              <div className="grid gap-y-1 sm:gap-y-2">
-                <div>
-                  <ion-icon name="radio-button-on-outline"></ion-icon>
-                  {isID ? "Acara Sekolah" : "School Events"}
-                </div>
-                <div>
-                  <ion-icon name="radio-button-on-outline"></ion-icon>
-                  {isID ? "Wisata Jeep & Liburan" : "Jeep Tour & Vacation"}
-                </div>
-                <div>
-                  <ion-icon name="radio-button-on-outline"></ion-icon>
-                  {isID ? "Pernikahan & Lamaran" : "Wedding & Engagement"}
-                </div>
-                <div>
-                  <ion-icon name="radio-button-on-outline"></ion-icon>
-                  {isID ? "Paket Edit Video" : "Edit Video Package"}
-                </div>
-                <div>
-                  <ion-icon name="radio-button-on-outline"></ion-icon>
-                  {isID ? "Paket Events" : "Events Package"}
-                </div>
-              </div>
-              <div className="grid gap-y-1 sm:gap-y-2">
-                <div>
-                  <ion-icon name="radio-button-on-outline"></ion-icon>
-                  {isID ? "Paket Drone" : "Drone Package"}
-                </div>
-                <div>
-                  <ion-icon name="radio-button-on-outline"></ion-icon>
-                  {isID ? "Paket Photographer" : "Photographer Package"}
-                </div>
-                <div>
-                  <ion-icon name="radio-button-on-outline"></ion-icon>
-                  {isID ? "Paket Videographer" : "Videographer Package"}
-                </div>
-                <div>
-                  <ion-icon name="radio-button-on-outline"></ion-icon>
-                  {isID ? "Paket Lengkap" : "Full Package"}
-                </div>
-                <div>
-                  <ion-icon name="radio-button-on-outline"></ion-icon>
-                  {isID ? "Request Layanan" : "Custom Request"}
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="self-center grid gap-y-2 sm:gap-y-4 hidden sm:block">
-          <div className="text-base sm:text-lg font-semibold">Menu</div>
-          <div className="service-footer text-xs sm:text-sm grid gap-y-1 sm:gap-y-2 cursor-pointer">
-            <Link to="/">
-              <ion-icon name="radio-button-on-outline"></ion-icon>
-              {isID ? "Beranda" : "Home"}
-            </Link>
-            <Link to="/pricelist">
-              <ion-icon name="radio-button-on-outline"></ion-icon>Price List
-            </Link>
-            <Link to="/gallery">
-              <ion-icon name="radio-button-on-outline"></ion-icon>
-              {isID ? "Galeri" : "Gallery"}
-            </Link>
+
+          {/* Navigation */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Menu</h4>
+            <ul className="space-y-2.5">
+              {navLinks.map((link, i) => (
+                <li key={i}>
+                  <Link
+                    to={link.to}
+                    className="text-slate-400 hover:text-white text-sm transition-colors"
+                  >
+                    {isID ? link.labelId : link.labelEn}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">
+              {isID ? "Kontak" : "Contact"}
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={`tel:+${number}`}
+                  className="flex items-center gap-2 text-slate-400 hover:text-white text-sm transition-colors"
+                >
+                  <ion-icon name="call-outline"></ion-icon>
+                  +{number}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://wa.me/${number}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-slate-400 hover:text-white text-sm transition-colors"
+                >
+                  <ion-icon name="logo-whatsapp"></ion-icon>
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:lensakitap@gmail.com"
+                  className="flex items-center gap-2 text-slate-400 hover:text-white text-sm transition-colors"
+                >
+                  <ion-icon name="mail-outline"></ion-icon>
+                  lensakitap@gmail.com
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 px-[5vw] sm:px-[2.5vw]">
-        <div className="bg-buttonPrimary rounded-t-3xl text-white text-center py-2">
-          © LensaKita 2024
+
+      {/* Bottom Bar */}
+      <div className="border-t border-slate-800">
+        <div className="container-main py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-slate-500 text-sm">
+            © {new Date().getFullYear()} LensaKita. All rights reserved.
+          </p>
+          <div className="flex items-center gap-1 text-slate-500 text-sm">
+            <span>Made with</span>
+            <ion-icon name="heart" style={{ color: "#ef4444" }}></ion-icon>
+            <span>in Indonesia</span>
+          </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

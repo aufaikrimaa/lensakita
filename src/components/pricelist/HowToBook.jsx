@@ -4,29 +4,28 @@ import { number } from "../../data/contactData";
 
 const steps = [
   {
-    icon: "globe-outline",
-    labelId: "Kunjungi dan jelajahi website resmi Lensakita",
-    labelEn: "Visit and explore the official Lensakita website",
+    step: 1,
+    icon: "search-outline",
+    labelId: "Jelajahi paket dokumentasi yang tersedia",
+    labelEn: "Browse available documentation packages",
   },
   {
-    icon: "list-outline",
-    labelId: "Pilih layanan dari menu price list atau acara lain sesuai kebutuhanmu",
-    labelEn: "Choose a service from the price list menu or other events to suit your needs",
+    step: 2,
+    icon: "checkmark-circle-outline",
+    labelId: "Pilih paket yang sesuai kebutuhanmu",
+    labelEn: "Select a package that suits your needs",
   },
   {
+    step: 3,
     icon: "create-outline",
-    labelId: 'Klik tombol "Pesan" dan isi data untuk memesan layanan',
-    labelEn: 'Click the "Order" button and fill out the form to book our service',
+    labelId: "Isi formulir pemesanan dengan lengkap",
+    labelEn: "Fill out the booking form completely",
   },
   {
+    step: 4,
     icon: "chatbubbles-outline",
-    labelId: "Konfirmasi pesananmu via WhatsApp dan tentukan metode pembayaran",
-    labelEn: "Confirm your order via WhatsApp and finalize the payment method",
-  },
-  {
-    icon: "camera-outline",
-    labelId: "Saatnya mendokumentasikan momen berhargamu bersama kami!",
-    labelEn: "It's time to document your precious moments with us!",
+    labelId: "Diskusikan detail via WhatsApp",
+    labelEn: "Discuss details via WhatsApp",
   },
 ];
 
@@ -35,25 +34,37 @@ function HowToBook() {
 
   return (
     <div>
-      <h2 className="text-xl font-bold text-primary mb-2">
-        {isID ? "Cara Memesan" : "How to Book"}
-      </h2>
-      <p className="text-sm text-gray mb-6">
-        {isID
-          ? "Ikuti langkah mudah berikut untuk memesan layanan dokumentasi"
-          : "Follow these easy steps to book our documentation service"}
-      </p>
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-10 h-10 bg-brand-100 rounded-xl flex items-center justify-center">
+          <ion-icon name="book-outline" style={{ fontSize: "1.25rem", color: "#16a34a" }}></ion-icon>
+        </div>
+        <div>
+          <h3 className="font-bold text-slate-900">
+            {isID ? "Cara Pemesanan" : "How to Book"}
+          </h3>
+          <p className="text-xs text-slate-500">
+            {isID ? "4 langkah mudah" : "4 easy steps"}
+          </p>
+        </div>
+      </div>
 
       <div className="space-y-4">
-        {steps.map((step, index) => (
-          <div key={index} className="flex items-start gap-3">
-            <div className="flex-shrink-0 w-8 h-8 bg-buttonPrimary/10 rounded-full flex items-center justify-center text-buttonPrimary">
-              <ion-icon name={step.icon} style={{ fontSize: "1rem" }}></ion-icon>
+        {steps.map((item, index) => (
+          <div key={index} className="flex gap-3">
+            <div className="flex flex-col items-center">
+              <div className="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center text-slate-600">
+                <ion-icon name={item.icon} style={{ fontSize: "1rem" }}></ion-icon>
+              </div>
+              {index < steps.length - 1 && (
+                <div className="w-px h-full bg-slate-200 my-1" />
+              )}
             </div>
-            <div className="flex-1 pt-1">
-              <p className="text-sm text-primary leading-relaxed">
-                <span className="font-medium text-gray mr-1">{index + 1}.</span>
-                {isID ? step.labelId : step.labelEn}
+            <div className="flex-1 pb-4">
+              <span className="text-xs font-medium text-brand-600 mb-0.5 block">
+                {isID ? `Langkah ${item.step}` : `Step ${item.step}`}
+              </span>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                {isID ? item.labelId : item.labelEn}
               </p>
             </div>
           </div>
@@ -62,10 +73,10 @@ function HowToBook() {
 
       <button
         onClick={() => window.open(`https://wa.me/${number}`, "_blank")}
-        className="mt-6 w-full bg-buttonPrimary hover:bg-buttonPrimary/90 text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
+        className="w-full mt-4 btn-primary"
       >
         <ion-icon name="logo-whatsapp" style={{ fontSize: "1.25rem" }}></ion-icon>
-        {isID ? "Pesan Sekarang" : "Book Now"}
+        {isID ? "Hubungi Kami" : "Contact Us"}
       </button>
     </div>
   );
