@@ -127,15 +127,10 @@ function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-slate-800">
-        <div className="container-main py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="container-main py-6 flex flex-col sm:flex-row items-center justify-end gap-4">
           <p className="text-slate-500 text-sm">
             © {new Date().getFullYear()} LensaKita. All rights reserved.
           </p>
-          <div className="flex items-center gap-1 text-slate-500 text-sm">
-            <span>Made with</span>
-            <ion-icon name="heart" style={{ color: "#ef4444" }}></ion-icon>
-            <span>in Indonesia</span>
-          </div>
         </div>
       </div>
     </footer>
