@@ -1,0 +1,7 @@
+{
+  "projectId": "f1c907ee-d762-466e-8038-90cc5a633a83",
+  "createdAt": 1738563600000,
+  "startupCommands": [
+    "powershell -Command \"cd C:\\Users\\T470s\\WEB\\lensakita; npm run dev\""
+  ]
+}
