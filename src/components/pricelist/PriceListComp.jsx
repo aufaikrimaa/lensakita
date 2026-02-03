@@ -1,13 +1,18 @@
-import { useState, useEffect, useRef, memo, useContext } from "react";
+import { useState, useEffect, useRef, memo, useContext, useMemo } from "react";
 import { gsap } from "gsap";
 import { pricelistData } from "../../data/pricelistData";
 import { LanguageContext } from "../../App";
-import Masonry from "react-masonry-css";
 import HowToBook from "./HowToBook";
-import qmark from "../../assets/question-mark.svg";
 import PriceListCard from "./PricelistCard";
 import Footer from "../footer/Footer";
 import "./pricelist.css";
+
+const categories = [
+  { id: "all", icon: "albums-outline", labelId: "Semua", labelEn: "All" },
+  { id: "school", icon: "school-outline", labelId: "Sekolah", labelEn: "School" },
+  { id: "wd", icon: "heart-circle-outline", labelId: "Pernikahan", labelEn: "Wedding" },
+  { id: "anev", icon: "film-outline", labelId: "Lainnya", labelEn: "Others" },
+];
 
 function PriceListComp() {
   const { isID } = useContext(LanguageContext);
@@ -15,209 +20,160 @@ function PriceListComp() {
   const [menu, setMenu] = useState("all");
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef(null);
+  const overlayRef = useRef(null);
+
+  const filteredItems = useMemo(() => {
+    const items = [];
+    if (menu === "all" || menu === "anev") {
+      items.push(...pricelistData.anotherEvents.data);
+    }
+    if (menu === "all" || menu === "school") {
+      items.push(...pricelistData.school.data);
+    }
+    if (menu === "all" || menu === "wd") {
+      items.push(...pricelistData.wedding.data);
+    }
+    return items;
+  }, [menu]);
 
   useEffect(() => {
     if (isOpen) {
+      document.body.style.overflow = "hidden";
+      gsap.to(overlayRef.current, { opacity: 1, duration: 0.3 });
       gsap.fromTo(
         modalRef.current,
         { y: "100%", opacity: 0 },
-        { y: "0%", opacity: 1, duration: 0.5, ease: "power3.out" }
+        { y: "0%", opacity: 1, duration: 0.4, ease: "power3.out" }
       );
     } else {
-      gsap.to(modalRef.current, {
-        y: "100%",
-        opacity: 0,
-        duration: 0.5,
-        ease: "power3.in",
-      });
+      document.body.style.overflow = "";
     }
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   const handleModalClose = () => {
+    gsap.to(overlayRef.current, { opacity: 0, duration: 0.3 });
     gsap.to(modalRef.current, {
       y: "100%",
       opacity: 0,
-      duration: 0.5,
+      duration: 0.4,
       ease: "power3.in",
-      onComplete: () => {
-        setIsOpen(false);
-      },
+      onComplete: () => setIsOpen(false),
     });
   };
 
-  const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
-  };
-
   return (
-    <div>
-      {/* button how to book phone screen */}
-      <div className="block sm:hidden">
-        <div className="fixed mt-[92vh] ml-[85vw] z-30">
-          <img
-            src={qmark}
-            className="w-[80%]"
-            onClick={() => setIsOpen(!isOpen)}
-          />
-        </div>
-      </div>
-      {/* modal how to book phone screen */}
-      <div
-        onClick={handleModalClose}
-        className={`${
-          isOpen ? "block z-40" : "hidden"
-        } sm:hidden h-screen flex fixed`}
-        style={{
-          backgroundColor: "#001B0Ab4",
-        }}
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      {/* Mobile FAB */}
+      <button
+        onClick={() => setIsOpen(true)}
+        className="lg:hidden fixed bottom-6 right-6 z-30 w-14 h-14 bg-buttonPrimary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-opacity-90 transition-all active:scale-95"
+        aria-label="How to book"
       >
-        <div
-          ref={modalRef}
-          className="self-center bg-white mx-4 p-6 rounded-lg"
-        >
-          <HowToBook />
-        </div>
-      </div>
+        <ion-icon name="help-circle-outline" style={{ fontSize: "1.75rem" }}></ion-icon>
+      </button>
 
-      {/* content */}
-      <div className="relative bg-secondary px-[5vw] sm:px-[2.5vw]">
-        <div className="h-[6rem] sm:h-[4rem] 2xl:h-[6rem] bg-white fixed w-full z-10"></div>
-        <div className="sm:flex py-[5vw] sm:py-[vw]">
-          <div className="pricelist-content bg-white w-[90vw] sm:w-[53vw] 2xl:w-[55vw] fixed mt-4 sm:mt-0 flex flex-col items-center sm:items-start z-20">
-            <div className="w-full overflow-x-auto  gap-x-1 text-xs xl:text-[0.7rem] 2xl:text-xs mt-8 sm:mt-0 justify-center sm:pr-4">
-              <div className="inline-flex space-x-1">
-                <div
-                  className={`grid justify-items-center w-[6rem] sm:w-[8rem] 2xl:w-[10rem] my-1 p-1 sm:p-2 hover:bg-buttonSecondary cursor-pointer rounded-md transition ease-in-out text-center ${
-                    menu === "all" ? "bg-buttonSecondary" : ""
+      {/* Mobile Modal */}
+      {isOpen && (
+        <div className="lg:hidden fixed inset-0 z-50 flex items-end justify-center">
+          <div
+            ref={overlayRef}
+            onClick={handleModalClose}
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0"
+          />
+          <div
+            ref={modalRef}
+            className="relative w-full max-h-[85vh] bg-white rounded-t-3xl p-6 pb-8 overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-4" />
+            <button
+              onClick={handleModalClose}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              aria-label="Close"
+            >
+              <ion-icon name="close-outline" style={{ fontSize: "1.25rem" }}></ion-icon>
+            </button>
+            <HowToBook />
+          </div>
+        </div>
+      )}
+
+      {/* Main Content */}
+      <div className="pt-20 sm:pt-24 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2">
+              {isID ? "Daftar Harga" : "Price List"}
+            </h1>
+            <p className="text-gray text-sm sm:text-base">
+              {isID
+                ? "Pilih paket dokumentasi yang sesuai kebutuhanmu"
+                : "Choose a documentation package that suits your needs"}
+            </p>
+          </div>
+
+          {/* Category Tabs */}
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex bg-gray-100 rounded-xl p-1.5 gap-1">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setMenu(cat.id)}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    menu === cat.id
+                      ? "bg-white text-primary shadow-sm"
+                      : "text-gray hover:text-primary hover:bg-white/50"
                   }`}
-                  onClick={() => setMenu("all")}
                 >
-                  <div className="">
-                    <ion-icon name="albums-outline"></ion-icon>
-                  </div>
-                  {isID ? "Semua" : "All"}
-                </div>
-                <div
-                  className={`grid justify-items-center w-[6rem] sm:w-[8rem] 2xl:w-[10rem]  my-1 p-1 sm:p-2  hover:bg-buttonSecondary cursor-pointer rounded-md transition ease-in-out text-center ${
-                    menu === "school" ? "bg-buttonSecondary" : ""
-                  }`}
-                  onClick={() => setMenu("school")}
-                >
-                  <div className="">
-                    <ion-icon name="school-outline"></ion-icon>
-                  </div>
-                  {isID ? "Acara Sekolah" : "School Events"}
-                </div>
-                {/* <div
-                  className={`grid justify-items-center w-[6rem] sm:w-[8rem] 2xl:w-[10rem] my-1 p-1 sm:p-2  hover:bg-buttonSecondary cursor-pointer rounded-md transition ease-in-out text-center ${
-                    menu === "jeep" ? "bg-buttonSecondary" : ""
-                  }`}
-                  onClick={() => setMenu("jeep")}
-                >
-                  <div className="">
-                    <ion-icon name="car-outline"></ion-icon>
-                  </div>
-                  {isID ? "Wisata Jeep & Liburan" : "Jeep Tour & Vacation"}
-                </div> */}
-                <div
-                  className={`grid justify-items-center w-[6rem] sm:w-[8rem] 2xl:w-[10rem] my-1 p-1 sm:p-2  hover:bg-buttonSecondary cursor-pointer rounded-md transition ease-in-out text-center ${
-                    menu === "wd" ? "bg-buttonSecondary" : ""
-                  }`}
-                  onClick={() => setMenu("wd")}
-                >
-                  <div className="">
-                    <ion-icon name="heart-circle-outline"></ion-icon>
-                  </div>
-                  {isID ? "Pernikahan & Lamaran" : "Wedding & Engagement"}
-                </div>
-                <div
-                  className={`grid justify-items-center w-[6rem] sm:w-[8rem] 2xl:w-[10rem] my-1 p-1 sm:p-2  hover:bg-buttonSecondary cursor-pointer rounded-md transition ease-in-out text-center ${
-                    menu === "anev" ? "bg-buttonSecondary" : ""
-                  }`}
-                  onClick={() => setMenu("anev")}
-                >
-                  <div className="">
-                    <ion-icon name="film-outline"></ion-icon>
-                  </div>
-                  {isID ? "Acara Lain" : "Another Events"}
-                </div>
-              </div>
+                  <ion-icon name={cat.icon} style={{ fontSize: "1.1rem" }}></ion-icon>
+                  <span className="hidden sm:inline">
+                    {isID ? cat.labelId : cat.labelEn}
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
 
-          <div className="content w-full sm:w-[53vw] 2xl:w-[55vw] mt-[8rem] sm:mt-[5rem]">
-            <Masonry
-              breakpointCols={breakpointColumnsObj}
-              className="w-full my-masonry-grid flex"
-              columnClassName="my-masonry-grid_column"
-            >
-              {pricelistData.anotherEvents.data.length > 0 &&
-                (menu === "all" || menu === "anev") &&
-                pricelistData.anotherEvents.data.map((item, i) => (
-                  <div className="px-2" key={i}>
-                    <PriceListCard
-                      id={item.id}
-                      photo={item.photo}
-                      title={isID ? item.title.id : item.title.en}
-                      pack={item.pack}
-                      price={item.price}
-                    />
-                  </div>
-                ))}
-              {pricelistData.school.data.length > 0 &&
-                (menu === "all" || menu === "school") &&
-                pricelistData.school.data.map((item, i) => (
-                  <div className="px-2" key={i}>
-                    <PriceListCard
-                      id={item.id}
-                      photo={item.photo}
-                      title={isID ? item.title.id : item.title.en}
-                      pack={item.pack}
-                      price={item.price}
-                    />
-                  </div>
-                ))}
-              {/* {pricelistData.tour.data.map((item, i) => (
-                <div
-                  className={`px-2 ${
-                    menu === "all" || menu === "jeep" ? "block" : "hidden"
-                  }`}
-                  key={i}
-                >
+          {/* Content Grid */}
+          <div className="lg:flex lg:gap-8">
+            {/* Price Cards Grid */}
+            <div className="lg:flex-1">
+              <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+                {filteredItems.map((item) => (
                   <PriceListCard
+                    key={item.id}
                     id={item.id}
                     photo={item.photo}
                     title={isID ? item.title.id : item.title.en}
                     pack={item.pack}
                     price={item.price}
                   />
-                </div>
-              ))} */}
-              {pricelistData.wedding.data.length > 0 &&
-                (menu === "all" || menu === "wd") &&
-                pricelistData.wedding.data.map((item, i) => (
-                  <div className="px-2" key={i}>
-                    <PriceListCard
-                      id={item.id}
-                      photo={item.photo}
-                      title={isID ? item.title.id : item.title.en}
-                      pack={item.pack}
-                      price={item.price}
-                    />
-                  </div>
                 ))}
-            </Masonry>
-          </div>
-          <div className="mt-2 hidden sm:block z-20">
-            <div className="fixed h-[87%] sm:w-[42%] 2xl:w-[40%] rounded-xl p-8 bg-lightGray">
-              <HowToBook />
+              </div>
+              {filteredItems.length === 0 && (
+                <div className="text-center py-16 text-gray">
+                  <ion-icon name="folder-open-outline" style={{ fontSize: "3rem" }}></ion-icon>
+                  <p className="mt-2">{isID ? "Tidak ada paket tersedia" : "No packages available"}</p>
+                </div>
+              )}
+            </div>
+
+            {/* Desktop Sidebar */}
+            <div className="hidden lg:block lg:w-96 lg:flex-shrink-0">
+              <div className="sticky top-28 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                <HowToBook />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="block sm:hidden">
+
+      {/* Footer for mobile */}
+      <div className="lg:hidden">
         <Footer />
       </div>
     </div>

@@ -1,39 +1,11 @@
-.pricelist-content ion-icon {
-  font-size: 1.3rem;
-}
-
-.pricelist-icon ion-icon {
-  font-size: 1rem;
-  vertical-align: top;
-}
-
-.detail ion-icon {
-  font-size: 0.8rem;
-  vertical-align: middle;
-  margin-right: 4px;
-}
-
-.detailAdd ion-icon {
-  font-size: 0.4rem;
-  vertical-align: middle;
-  margin-right: 4px;
-}
-
-@media (min-width: 1536px) {
-  .pricelist-icon ion-icon {
-    font-size: 1.4rem;
-  }
-  .pricelist-content ion-icon {
-    font-size: 1.5rem;
-  }
-}
-
+/* Price list specific styles */
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  color: #ffffff;
+  color: #001B0A;
+  font-size: 1.25rem;
 }
 
 .swiper-button-next.swiper-button-disabled::after,
 .swiper-button-prev.swiper-button-disabled::after {
-  opacity: 0.5;
+  opacity: 0.3;
 }

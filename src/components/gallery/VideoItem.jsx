@@ -1,32 +1,26 @@
 import { memo } from "react";
-import instagram from "../../assets/instagram-icon.svg";
 
 function VideoItem({ cover, link }) {
   return (
-    <div className="w-[47%] sm:w-[24%] m-1 cursor-pointer relative">
-      <div className="relative">
+    <div
+      className="group cursor-pointer"
+      onClick={() => window.open(link, "_blank")}
+    >
+      <div className="relative overflow-hidden rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
         <img
           src={cover}
-          alt={"video"}
+          alt="Video thumbnail"
           crossOrigin="anonymous"
-          className="cover-videos w-full rounded-md"
-          onClick={() => {
-            window.open(link, "_blank");
-          }}
+          className="w-full aspect-[4/5] object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
         />
-        <div
-          onClick={() => {
-            window.open(link, "_blank");
-          }}
-          className="overlay absolute top-0 left-0 w-full h-full flex justify-center items-center opacity-0 transition-opacity duration-300"
-        >
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            <img
-              src={instagram}
-              alt="Instagram Icon"
-              className="instagram-icon rounded-xl"
-            />
-          </a>
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+          <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+            <ion-icon
+              name="logo-instagram"
+              style={{ fontSize: "1.5rem", color: "#E1306C" }}
+            ></ion-icon>
+          </div>
         </div>
       </div>
     </div>

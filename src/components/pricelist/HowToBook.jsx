@@ -1,87 +1,72 @@
 import { memo, useContext } from "react";
 import { LanguageContext } from "../../App";
 import { number } from "../../data/contactData";
-import service1 from "../../assets/service1.svg";
-import service2 from "../../assets/service2.svg";
-import service3 from "../../assets/service3.svg";
-import service4 from "../../assets/service4.svg";
-import service5 from "../../assets/service5.svg";
+
+const steps = [
+  {
+    icon: "globe-outline",
+    labelId: "Kunjungi dan jelajahi website resmi Lensakita",
+    labelEn: "Visit and explore the official Lensakita website",
+  },
+  {
+    icon: "list-outline",
+    labelId: "Pilih layanan dari menu price list atau acara lain sesuai kebutuhanmu",
+    labelEn: "Choose a service from the price list menu or other events to suit your needs",
+  },
+  {
+    icon: "create-outline",
+    labelId: 'Klik tombol "Pesan" dan isi data untuk memesan layanan',
+    labelEn: 'Click the "Order" button and fill out the form to book our service',
+  },
+  {
+    icon: "chatbubbles-outline",
+    labelId: "Konfirmasi pesananmu via WhatsApp dan tentukan metode pembayaran",
+    labelEn: "Confirm your order via WhatsApp and finalize the payment method",
+  },
+  {
+    icon: "camera-outline",
+    labelId: "Saatnya mendokumentasikan momen berhargamu bersama kami!",
+    labelEn: "It's time to document your precious moments with us!",
+  },
+];
 
 function HowToBook() {
   const { isID } = useContext(LanguageContext);
+
   return (
     <div>
-      <div className="text-gray font-bold text-lg sm:text-xl 2xl:text-2xl">
+      <h2 className="text-xl font-bold text-primary mb-2">
+        {isID ? "Cara Memesan" : "How to Book"}
+      </h2>
+      <p className="text-sm text-gray mb-6">
         {isID
-          ? "Cara memesan layanan dokumentasi"
-          : "How to book a documentation service"}
+          ? "Ikuti langkah mudah berikut untuk memesan layanan dokumentasi"
+          : "Follow these easy steps to book our documentation service"}
+      </p>
+
+      <div className="space-y-4">
+        {steps.map((step, index) => (
+          <div key={index} className="flex items-start gap-3">
+            <div className="flex-shrink-0 w-8 h-8 bg-buttonPrimary/10 rounded-full flex items-center justify-center text-buttonPrimary">
+              <ion-icon name={step.icon} style={{ fontSize: "1rem" }}></ion-icon>
+            </div>
+            <div className="flex-1 pt-1">
+              <p className="text-sm text-primary leading-relaxed">
+                <span className="font-medium text-gray mr-1">{index + 1}.</span>
+                {isID ? step.labelId : step.labelEn}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div className="text-[0.6rem] 2xl:text-xs">
-        {isID
-          ? "Kamu bisa langsung hubungi kami melalui kontak yang sudah tersedia atau ikuti langkah berikut kalau kamu masih bingung!"
-          : "You can contact us directly through the available contact options or follow these steps if you’re still unsure!"}
-      </div>
-      <div className="text-[0.65rem] 2xl:text-xs">
-        <div className="flex mt-8">
-          <img src={service1} className="w-[2.8rem] 2xl:w-[3.8rem] mr-3" />
-          <div className="self-center">
-            {isID
-              ? "Kunjungi dan jelajahi webite resmi Lensakita"
-              : "Visit and explore the official Lensakita website"}
-          </div>
-        </div>
-        <div className="flex mt-8 justify-end">
-          <div className="self-center">
-            {isID
-              ? " Masuk ke menu price list dan tentukan layanan yang akan kamu pesan, kamu juga bisa memesan selain layanan yang tertera dengan masuk ke menu acara lain"
-              : "Go to the price list menu and choose the service you want to book. You can also book services not listed by going to the other events menu"}
-          </div>
-          <img src={service2} className="w-[2.8rem] 2xl:w-[3.8rem] ml-3" />
-        </div>
-        <div className="flex mt-8">
-          <img src={service3} className="w-[2.8rem] 2xl:w-[3.8rem] mr-3" />
-          <div className="self-center">
-            {isID
-              ? "Klik button “pesan” dan isi data untuk memesan layanan dari kami, selanjutnya tinggal menunggu kami hubungi"
-              : 'Click the "order" button and fill out the form to book our service, then wait for us to contact you'}
-          </div>
-        </div>
-        <div className="flex mt-8 justify-end">
-          <div className="self-center">
-            {isID
-              ? "Kamu juga bisa langsung melakukan konfirmasi pesananmu melalui kontak whatsapp kami atau klik pada button “Diskusi”, tentukan kesepakatan dan metode pembayaran dari layanan yang kamu pesan"
-              : "You can also directly confirm your order through our WhatsApp contact or click the “Discussion” button to finalize the agreement and payment method for the services you ordered."}
-          </div>
-          <img src={service4} className="w-[2.8rem] 2xl:w-[3.8rem] ml-3" />
-        </div>
-        <div className="flex mt-8">
-          <img src={service5} className="w-[2.8rem] 2xl:w-[3.8rem] mr-3" />
-          <div className="self-center">
-            {isID
-              ? "Setelah mencapai kesepakatan dari diskusi, saatnya mendokumentasikan moment yang kamu miliki bersama kami"
-              : "After reaching an agreement from the discussion, it's time to document your moments with us"}
-          </div>
-        </div>
-      </div>
-      <div className="flex mt-10 sm:mt-3 2xl:mt-4 justify-end">
-        <div
-          onClick={() => {
-            window.open(`https://wa.me/${number}`, "_blank");
-          }}
-          className="button bg-buttonPrimary p-2 rounded-full  flex justify-end sm:w-[30%]"
-        >
-          <div className="pricelist-icon h-[1.1rem] 2xl:h-[1.5rem] leading-[4vw] overflow-hidden text-[0.7rem] 2xl:text-sm sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-center">
-            <h2 className="text-white mb-1 sm:mb-0">
-              <ion-icon name="logo-whatsapp"></ion-icon>
-              {isID ? " Pesan Sekarang!" : " Book now!"}
-            </h2>
-            <h2 className="text-white">
-              <ion-icon name="logo-whatsapp"></ion-icon>
-              {isID ? " Pesan Sekarang!" : " Book now!"}
-            </h2>
-          </div>
-        </div>
-      </div>
+
+      <button
+        onClick={() => window.open(`https://wa.me/${number}`, "_blank")}
+        className="mt-6 w-full bg-buttonPrimary hover:bg-buttonPrimary/90 text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
+      >
+        <ion-icon name="logo-whatsapp" style={{ fontSize: "1.25rem" }}></ion-icon>
+        {isID ? "Pesan Sekarang" : "Book Now"}
+      </button>
     </div>
   );
 }
