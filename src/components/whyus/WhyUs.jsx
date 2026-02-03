@@ -78,7 +78,7 @@ function WhyUs() {
             </h2>
           </div>
         </div>
-        <div className="outerCircle mt-[2vw] w-[14vw] h-[14vw] sm:w-[6.5vw]  sm:h-[6.5vw] bg-buttonPrimary rounded-full flex items-center justify-center">
+        <div className="outerCircle mt-[2vw] w-[14vw] h-[14vw] sm:w-[6.5vw]  sm:h-[6.5vw] bg-brand-500 rounded-full flex items-center justify-center">
           <div className="circle text-white w-[2rem] sm:w-[4rem]">
             <ion-icon name="medical-outline"></ion-icon>
           </div>

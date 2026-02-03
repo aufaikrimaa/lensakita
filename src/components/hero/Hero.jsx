@@ -84,12 +84,12 @@ function Hero() {
           className="rotateDiv w-[200vw] h-[200vh] md:w-[200vw] 
           md:h-[200vh] bg-primary  scale-100
           flex items-start
-          justify-center gap-[6vw] md:gap-[2vw]"
+          justify-center gap-3 md:gap-5"
         >
           {data.map((item, i) => (
             <div
               key={i}
-              className={`rowDiv ${item.class} flex flex-col gap-[6vw] md:gap-[2vw]`}
+              className={`rowDiv ${item.class} flex flex-col gap-3 md:gap-5`}
             >
               <div className="imgDiv ">
                 <img
