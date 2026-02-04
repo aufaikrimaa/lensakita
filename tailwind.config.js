@@ -40,6 +40,7 @@ export default {
           900: "#0f172a",
           950: "#020617",
         },
+        third: '#858588',
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out",

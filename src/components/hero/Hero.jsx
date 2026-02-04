@@ -15,7 +15,7 @@ function Hero() {
       scrollTrigger: {
         trigger: ".part1",
         start: "50% 50%",
-        end: "250% 50%",
+        end: "120% 50%",
         scrub: 1,
         pin: true,
       },
@@ -139,17 +139,17 @@ function Hero() {
           >
             <h3
               className="text-[2.3vw] sm:text-[.6vw] 
-              uppercase text-center"
+              uppercase text-center text-white"
             >
               {isID ? "scroll ke bawah" : "scroll down"}
             </h3>
             <div
-              className="scrollingP w-[16vw] sm:w-[5vw] bg-third h-[.3vw] 
+              className="scrollingP w-[16vw] sm:w-[5vw] bg-third h-[.3vw]
             sm:h-[.1vw] relative rounded-md"
             >
               <div
                 className="scrolling absolute top-0 w-[0vw] 
-              sm:w-[0vw] bg-secondary  h-[.3vw] sm:h-[.1vw] 
+              sm:w-[0vw] bg-white  h-[.3vw] sm:h-[.1vw] 
               rounded-md"
               ></div>
             </div>

@@ -63,8 +63,8 @@ function About() {
   return (
     <div className="part2 w-[100%] bg-secondary">
       {/* //rounded div */}
-      <div className="hidden sm:flex roundedDivWrapper relative w-[100%] h-[100px] overflow-hidden ">
-        <div className="roundedDiv w-[150%] h-[750%] rounded-[50%] bg-secondary absolute left-1/2 -translate-x-1/2 "></div>
+      <div className="flex roundedDivWrapper relative w-[100%] h-[100px] z-40 overflow-hidden">
+        <div className="roundedDiv w-[350%] h-[950%] md:w-[150%] md:h-[750%] rounded-[50%] bg-secondary bg-white absolute left-1/2 -translate-x-1/2 "></div>
       </div>
       {/* <div class="roundedDivWrapper absolute w-full h-[150px] overflow-hidden rounded-[100%] left-0 top-0 -translate-y-1/2 z-10">
             <div class="w-full h-1/2 bg-secondary"></div>
