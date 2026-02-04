@@ -9,12 +9,14 @@ function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
+    const threshold = location.pathname === "/" ? 2300 : 20;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > threshold);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
     setMobileMenuOpen(false);
