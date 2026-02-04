@@ -80,13 +80,13 @@ function ItemGallery() {
             {dataPhoto.length > 0 ? (
               <Masonry
                 breakpointCols={breakpointColumnsObj}
-                className="flex -ml-4 w-auto"
-                columnClassName="pl-4 bg-clip-padding"
+                className="flex -ml-3 w-auto"
+                columnClassName="pl-3 bg-clip-padding"
               >
                 {dataPhoto.map((img, i) => (
                   <div
                     key={i}
-                    className="mb-4 group cursor-pointer"
+                    className="mb-3 group cursor-pointer"
                     onClick={() => setLightboxImage(img)}
                   >
                     <div className="relative overflow-hidden rounded-2xl bg-slate-200">
@@ -110,7 +110,7 @@ function ItemGallery() {
               </Masonry>
             ) : (
               <div className="text-center py-20">
-                <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <ion-icon name="images-outline" style={{ fontSize: "2rem", color: "#94a3b8" }}></ion-icon>
                 </div>
                 <p className="text-slate-500">{isID ? "Belum ada foto" : "No photos yet"}</p>
@@ -123,7 +123,7 @@ function ItemGallery() {
         {menu === "videos" && (
           <>
             {dataVideo.length > 0 ? (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                 {dataVideo.map((item, i) => (
                   <VideoItem key={i} link={item.video} cover={item.cover} />
                 ))}
