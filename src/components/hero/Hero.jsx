@@ -144,7 +144,7 @@ function Hero() {
               {isID ? "scroll ke bawah" : "scroll down"}
             </h3>
             <div
-              className="scrollingP w-[16vw] sm:w-[5vw] bg-third h-[.3vw]
+              className="scrollingP w-[16vw] sm:w-[5vw] bg-white/40 h-[.3vw]
             sm:h-[.1vw] relative rounded-md"
             >
               <div

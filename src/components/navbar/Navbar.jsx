@@ -9,7 +9,7 @@ function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    const threshold = location.pathname === "/" ? 2300 : 20;
+    const threshold = location.pathname === "/" ? 1300 : 20;
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > threshold);
@@ -55,25 +55,43 @@ function Navbar() {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden sm:flex items-center gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                    isActive(link.to)
-                      ? isScrolled
-                        ? "bg-brand-50 text-brand-700"
-                        : "bg-white/20 text-white"
-                      : isScrolled
-                      ? "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-                      : "text-white/80 hover:text-white hover:bg-white/10"
-                  }`}
+                  className="relative overflow-hidden group text-sm font-medium"
                 >
-                  {isID ? link.labelId : link.labelEn}
+                  <span
+                    className={`block transition-transform duration-500 ${
+                      isActive(link.to)
+                        ? isScrolled
+                          ? "text-brand-600"
+                          : "text-white"
+                        : isScrolled
+                          ? "text-slate-600"
+                          : "text-white/70"
+                    } group-hover:-translate-y-full`}
+                  >
+                    {isID ? link.labelId : link.labelEn}
+                  </span>
+
+                  <span
+                    className={`absolute left-0 top-full block transition-transform duration-500 ${
+                      isActive(link.to)
+                        ? isScrolled
+                          ? "text-brand-600"
+                          : "text-white"
+                        : isScrolled
+                          ? "text-slate-600"
+                          : "text-white/70"
+                    } group-hover:-translate-y-full`}
+                  >
+                    {isID ? link.labelId : link.labelEn}
+                  </span>
                 </Link>
               ))}
-              <button
+               <button
                 onClick={toggleLanguage}
                 className={`ml-2 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
                   isScrolled
@@ -88,7 +106,7 @@ function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors ${
+              className={`sm:hidden p-2 rounded-lg transition-colors ${
                 isScrolled
                   ? "text-slate-600 hover:bg-slate-100"
                   : "text-white hover:bg-white/10"
@@ -122,7 +140,7 @@ function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
+          className={`sm:hidden overflow-hidden transition-all duration-300 ${
             mobileMenuOpen ? "max-h-64" : "max-h-0"
           }`}
         >

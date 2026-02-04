@@ -49,7 +49,7 @@ function ServiceSlide() {
                   </div>
                   <div className="w-[40vw] sm:w-[14vw] mt-[1.5rem] sm:mt-[2rem]">
                     <Link to="/pricelist">
-                      <div className="button bg-buttonPrimary py-4 rounded-full flex justify-center">
+                      <div className="button bg-brand-400 py-4 rounded-full flex justify-center">
                         <div className="h-[0.9rem] sm:h-[1.5rem] leading-[4vw] overflow-hidden sm:text-[1.1rem] sm:leading-[1.4vw] w-[35vw] sm:w-[12vw] tracking-tight text-white text-center">
                           <h2 className="mb-1 sm:mb-0">
                             {isID ? "Lihat" : "View"} Price List
