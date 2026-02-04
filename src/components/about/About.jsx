@@ -103,18 +103,10 @@ function About() {
             ? "Abadikan momen anda dengan fotografi dan videografi sinematik!"
             : "Capture your moments with photography and cinematic videography!"}
         </h3>
-        <div className="cta flex items-center justify-between sm:gap-[1vw] cursor-pointer">   
-          <Link to="/pricelist">
-            <button
-              className="btn-secondary"
-            >
-              <h2>{isID ? "Lihat" : "View"} Price List</h2>
-            </button>
-          </Link>
-
+        <div className="cta flex items-center w-full sm:w-fit sm:gap-[1vw] cursor-pointer">   
           <button
             onClick={() => window.open(`https://wa.me/${number}`, "_blank")}
-            className="btn-primary"
+            className="btn-primary w-full sm:w-fit"
           >
             <ion-icon name="logo-whatsapp" style={{ fontSize: "1.25rem" }}></ion-icon>
             {isID ? "Pesan Sekarang" : "Book Now"}
