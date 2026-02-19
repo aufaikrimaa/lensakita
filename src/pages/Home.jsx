@@ -15,7 +15,7 @@ function Home() {
       <About />
       <WhyUs />
       {/* <Packs  /> */}
-      <ServiceSlide />
+      {/* <ServiceSlide /> */}
       <Contact />
     </>
   );
